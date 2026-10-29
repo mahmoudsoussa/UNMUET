@@ -1,0 +1,31 @@
+/*
+Theme Name: UNMUTE
+Theme URI: https://github.com/mahmoudsoussa/UNMUET
+Author: UNMUTE Studio
+Author URI: https://github.com/mahmoudsoussa/UNMUET
+Description: UNMUTE is a custom-built WooCommerce theme for the UNMUTE alternative fashion brand — art-driven emotional darkwear. Dark, gallery-like storefront with lavender accents, brush-display typography, collection-based merchandising, print-on-demand friendly product pages (made-to-order notices, size/colour variation support), full Customizer control, RTL + LTR support and a mobile-first, dependency-free front end. "Wear What You Feel."
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: unmute
+Tags: e-commerce, woocommerce, dark, custom-colors, custom-logo, custom-menu, featured-images, translation-ready, rtl-language-support, blog
+*/
+
+/*
+ * This file intentionally holds only the theme header plus a minimal
+ * pre-paint base. All visual styling lives in assets/css/main.css
+ * (enqueued in functions.php) so it can be versioned and cached properly.
+ */
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background: #0b0a0e;
+	color: #f2eef8;
+}

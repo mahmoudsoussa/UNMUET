@@ -1,0 +1,62 @@
+/* ==========================================================================
+   UNMUTE — RTL adjustments (loaded automatically when the site is RTL)
+   Most of the layout uses logical properties; this file flips the rest.
+   ========================================================================== */
+
+.unmute-icon--flip-rtl {
+	transform: scaleX(-1);
+}
+
+.hero__media img {
+	object-position: 28% 30%;
+}
+
+.hero__media::after {
+	background:
+		linear-gradient(to top, var(--unmute-bg) 2%, transparent 42%),
+		linear-gradient(to left, var(--unmute-bg) 8%, color-mix(in srgb, var(--unmute-bg) 55%, transparent) 46%, transparent 78%);
+}
+
+.hero__inner {
+	margin-inline-start: auto;
+	margin-inline-end: 0;
+	text-align: right;
+}
+
+.hero__text {
+	margin-inline: auto 0;
+}
+
+.sec-head__rule {
+	background: linear-gradient(to left, var(--unmute-line-strong), transparent);
+}
+
+.col-card:hover .col-card__arrow {
+	transform: translateX(-4px);
+}
+
+.unmute-brand__name {
+	letter-spacing: 0.3em;
+}
+
+select {
+	background-position: calc(0% + 20px) 55%, calc(0% + 14px) 55%;
+}
+
+.unmute-searchform input[type="search"] {
+	padding-inline-start: 16px;
+	padding-inline-end: 42px;
+}
+
+.unmute-searchform .unmute-searchform__icon {
+	inset-inline-start: auto;
+	inset-inline-end: 14px;
+}
+
+.entry-content blockquote {
+	padding: 6px 22px 6px 0;
+}
+
+.unmute-nav .sub-menu {
+	text-align: right;
+}
