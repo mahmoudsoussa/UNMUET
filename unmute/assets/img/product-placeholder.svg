@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" role="img" aria-label="UNMUTE placeholder">
+  <rect width="600" height="750" fill="#141218"/>
+  <rect x="1" y="1" width="598" height="748" fill="none" stroke="#2a2436" stroke-width="2"/>
+  <circle cx="440" cy="150" r="120" fill="#1b1824"/>
+  <path d="M300 210c14 86 46 118 132 132-86 14-118 46-132 132-14-86-46-118-132-132 86-14 118-46 132-132Z" fill="#b7a4f0" opacity="0.85"/>
+  <path d="M150 560c8 50 26 68 76 76-50 8-68 26-76 76-8-50-26-68-76-76 50-8 68-26 76-76Z" fill="#8b6fe8" opacity="0.5"/>
+  <text x="300" y="700" text-anchor="middle" fill="#a9a1ba" font-family="Georgia, serif" font-size="26" letter-spacing="14">UNMUTE</text>
+</svg>

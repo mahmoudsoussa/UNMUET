@@ -1,0 +1,36 @@
+/* ==========================================================================
+   UNMUTE — block editor canvas (approximates the front-end dark surface)
+   ========================================================================== */
+
+body {
+	background: #141218;
+	color: #f2eef8;
+	font-family: 'Manrope', system-ui, sans-serif;
+}
+
+.editor-styles-wrapper,
+.editor-styles-wrapper p {
+	color: #f2eef8;
+}
+
+.editor-styles-wrapper a {
+	color: #b7a4f0;
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3 {
+	color: #f2eef8;
+	font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.editor-styles-wrapper blockquote {
+	border-inline-start: 3px solid #b7a4f0;
+	font-style: italic;
+}
+
+.editor-styles-wrapper .wp-block-button__link {
+	background: #b7a4f0;
+	color: #150f22;
+	border-radius: 999px;
+}
