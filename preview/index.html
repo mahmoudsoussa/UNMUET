@@ -1,16 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>UNMUTE — Wear What You Feel. (Theme preview)</title>
+<meta name="theme-color" content="#0F1226">
+<title>UNMUTE — ارتدِ ما تعبّر به عن نفسك (معاينة القالب)</title>
 <link rel="stylesheet" href="./fonts.css">
 <link rel="stylesheet" href="../unmute/assets/css/main.css">
+<link rel="stylesheet" href="../unmute/assets/css/rtl.css">
 </head>
-<body class="unmute-woo-active unmute-front">
-<a class="skip-link screen-reader-text" href="#unmute-main">Skip to content</a>
+<body class="unmute-woo-active unmute-front unmute-aurora">
+<a class="skip-link screen-reader-text" href="#unmute-main">انتقل إلى المحتوى</a>
 
-<div class="unmute-bar"><div class="unmute-container"><p>Every piece is printed to order — please allow 3–6 production days before shipping.</p></div></div>
+<div class="unmute-bar"><div class="unmute-container"><p>كل قطعة تُطبع حسب الطلب — ٣–٦ أيام إنتاج قبل الشحن. شحن مجاني فوق 95$.</p></div></div>
 
 <header id="masthead" class="unmute-header">
 	<div class="unmute-container unmute-header__inner">
@@ -18,19 +20,34 @@
 			<svg class="unmute-sparkle unmute-brand__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5c1 6.2 3.3 8.5 9.5 9.5-6.2 1-8.5 3.3-9.5 9.5-1-6.2-3.3-8.5-9.5-9.5 6.2-1 8.5-3.3 9.5-9.5Z"/></svg>
 			<span class="unmute-brand__name">UNMUTE</span>
 		</a>
-		<nav class="unmute-header__nav" aria-label="Primary">
+		<nav class="unmute-header__nav" aria-label="القائمة الرئيسية">
 			<ul class="unmute-nav">
-				<li class="menu-item current-menu-item"><a href="index.html">Home</a></li>
-				<li class="menu-item"><a href="shop.html">Shop</a></li>
-				<li class="menu-item"><a href="index.html#collections">Collections</a></li>
-				<li class="menu-item"><a href="#">Journal</a></li>
+				<li class="menu-item current-menu-item"><a href="index.html">الرئيسية</a></li>
+				<li class="menu-item"><a href="shop.html">المتجر</a></li>
+				<li class="menu-item"><a href="#collections">المجموعات</a></li>
+				<li class="menu-item"><a href="#">المدونة</a></li>
+				<li class="menu-item"><a href="#story">عنّا</a></li>
 			</ul>
 		</nav>
 		<div class="unmute-header__actions">
-			<button class="unmute-iconbtn" type="button" aria-label="Search"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
-			<a class="unmute-iconbtn" href="#" aria-label="Account"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg></a>
-			<a class="unmute-iconbtn unmute-iconbtn--cart" href="#" aria-label="Cart"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="unmute-cart-count">0</span></a>
-			<button class="unmute-iconbtn unmute-menu-toggle" type="button" aria-label="Menu"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+			<button class="unmute-iconbtn unmute-iconbtn--search" type="button" data-unmute-search-toggle aria-expanded="false" aria-controls="unmute-search-panel">
+				<svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+				<span class="unmute-iconbtn__label">ابحث عن تصميم…</span>
+				<span class="screen-reader-text">البحث</span>
+			</button>
+			<a class="unmute-iconbtn" href="#"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg><span class="screen-reader-text">حسابي</span></a>
+			<a class="unmute-iconbtn unmute-iconbtn--cart" href="#"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="unmute-cart-count">0</span><span class="screen-reader-text">حقيبة التسوق</span></a>
+			<button class="unmute-iconbtn unmute-menu-toggle" type="button" data-unmute-menu-toggle aria-expanded="false" aria-controls="unmute-drawer"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span class="screen-reader-text">القائمة</span></button>
+		</div>
+	</div>
+	<div class="unmute-search-panel" id="unmute-search-panel" hidden>
+		<div class="unmute-container">
+			<form role="search" method="get" class="unmute-searchform" action="#">
+				<label class="screen-reader-text" for="unmute-s">ابحث عن:</label>
+				<svg class="unmute-icon unmute-searchform__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+				<input id="unmute-s" type="search" name="s" placeholder="ابحث عن تصميم أو مجموعة…">
+				<button class="unmute-btn unmute-btn--primary" type="submit">بحث</button>
+			</form>
 		</div>
 	</div>
 </header>
@@ -38,27 +55,30 @@
 <main id="unmute-main" class="unmute-main">
 
 <section class="hero" id="top">
-	<div class="hero__media" aria-hidden="true"><img src="../unmute/assets/img/hero-placeholder.jpg" alt="" fetchpriority="high"></div>
+	<div class="hero__media" aria-hidden="true"><img src="../unmute/assets/img/hero-aurora.jpg" alt="" fetchpriority="high"></div>
 	<div class="hero__rail" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 	<svg class="unmute-sparkle hero__spark hero__spark--1" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5c1 6.2 3.3 8.5 9.5 9.5-6.2 1-8.5 3.3-9.5 9.5-1-6.2-3.3-8.5-9.5-9.5 6.2-1 8.5-3.3 9.5-9.5Z"/></svg>
 	<svg class="unmute-sparkle hero__spark hero__spark--2" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5c1 6.2 3.3 8.5 9.5 9.5-6.2 1-8.5 3.3-9.5 9.5-1-6.2-3.3-8.5-9.5-9.5 6.2-1 8.5-3.3 9.5-9.5Z"/></svg>
 	<div class="unmute-container hero__inner">
-		<p class="hero__eyebrow">UNMUTE — art-driven darkwear</p>
+		<div class="hero__copy">
+		<p class="hero__eyebrow">UNMUTE — EXPRESS WITHOUT LIMITS</p>
 		<h1 class="hero__title">Wear What You <span class="hero__accent">Feel.</span></h1>
-		<p class="hero__text">Original artwork for the feelings you can't say out loud. Drawn in-house, printed when you order it, made to be worn for years.</p>
+		<p class="hero__sub">ارتدِ ما تعبّر به عن نفسك.</p>
+		<p class="hero__text">أزياء لفنّانين لا يطلبون إذنًا. رُسوم أصلية، ألوان شفق متدفّقة، وقطع تُصنع حين تطلبها — بلا حدود، وبلا كود لباس.</p>
 		<div class="hero__cta">
-			<a class="unmute-btn unmute-btn--primary" href="shop.html">Shop Now</a>
-			<a class="unmute-btn unmute-btn--ghost" href="#collections">Explore Collections</a>
+			<a class="unmute-btn unmute-btn--primary" href="shop.html">تسوّق الآن <svg class="unmute-icon unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+			<a class="unmute-btn unmute-btn--ghost" href="#collections">استكشف المجموعات</a>
+		</div>
 		</div>
 	</div>
 </section>
 
 <section class="features">
 	<div class="unmute-container features__grid">
-		<div class="feature"><span class="feature__icon"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10l4 5-9 11L3 9l4-5Z"/><path d="M3 9h18"/></svg></span><div><h3 class="feature__title">Considered Materials</h3><p class="feature__text">Heavyweight blanks chosen for structure, drape and hand-feel.</p></div></div>
-		<div class="feature"><span class="feature__icon"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg></span><div><h3 class="feature__title">Ships Worldwide</h3><p class="feature__text">Tracked delivery to the US, Europe and beyond.</p></div></div>
-		<div class="feature"><span class="feature__icon"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><div><h3 class="feature__title">Secure Checkout</h3><p class="feature__text">Encrypted payments through trusted gateways.</p></div></div>
-		<div class="feature"><span class="feature__icon"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h2v-6H6a2 2 0 0 0-2 2ZM20 13v4a2 2 0 0 1-2 2h-2v-6h2a2 2 0 0 1 2 2Z"/></svg></span><div><h3 class="feature__title">Human Support</h3><p class="feature__text">Real replies from the studio — usually within 24 hours.</p></div></div>
+		<div class="feature"><span class="feature__icon"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10l4 5-9 11L3 9l4-5Z"/><path d="M3 9h18"/></svg></span><div><h3 class="feature__title">جودة مضمونة</h3><p class="feature__text">أقمشة ثقيلة، تفاصيل منجزة يدويًا.</p></div></div>
+		<div class="feature"><span class="feature__icon"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><div><h3 class="feature__title">دفع آمن</h3><p class="feature__text">بوابات دفع مشفّرة موثوقة.</p></div></div>
+		<div class="feature"><span class="feature__icon"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.6 5.3 3.6 8.5S14.4 18.1 12 20.5c-2.4-2.4-3.6-5.3-3.6-8.5S9.6 5.9 12 3.5Z"/></svg></span><div><h3 class="feature__title">شحن عالمي</h3><p class="feature__text">تتبّع كامل لأكثر من 40 دولة.</p></div></div>
+		<div class="feature"><span class="feature__icon"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h2v-6H6a2 2 0 0 0-2 2ZM20 13v4a2 2 0 0 1-2 2h-2v-6h2a2 2 0 0 1 2 2Z"/></svg></span><div><h3 class="feature__title">دعم سريع</h3><p class="feature__text">ردّ بشري خلال ٢٤ ساعة.</p></div></div>
 	</div>
 </section>
 
@@ -66,122 +86,157 @@
 	<div class="unmute-container">
 		<div class="sec-head">
 			<svg class="unmute-sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5c1 6.2 3.3 8.5 9.5 9.5-6.2 1-8.5 3.3-9.5 9.5-1-6.2-3.3-8.5-9.5-9.5 6.2-1 8.5-3.3 9.5-9.5Z"/></svg>
-			<h2 class="sec-head__title">Featured Pieces</h2>
+			<h2 class="sec-head__title">أعمالنا المميزة</h2>
 			<span class="sec-head__rule" aria-hidden="true"></span>
-			<a class="sec-head__link" href="shop.html">View all <svg class="unmute-icon unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+			<a class="sec-head__link" href="shop.html">عرض الكل <svg class="unmute-icon unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
 		</div>
-		<div class="pills" role="navigation" aria-label="Product categories">
-			<a class="pill is-active" href="shop.html">All pieces</a>
-			<a class="pill" href="#">The Unsaid</a>
-			<a class="pill" href="#">Dark Butterflies</a>
-			<a class="pill" href="#">Lunar Thoughts</a>
-			<a class="pill" href="#">Silent Rebellion</a>
-			<a class="pill" href="#">Fragmented Mind</a>
+
+		<nav class="pills" aria-label="فئات المنتجات">
+			<a class="pill is-active" href="shop.html">كل المنتجات</a>
+			<a class="pill" href="shop.html">تيشيرتات</a>
+			<a class="pill" href="shop.html">هوديز</a>
+			<a class="pill" href="shop.html">إكسسوارات</a>
+			<a class="pill" href="shop.html">مجموعات فنية</a>
+		</nav>
+
+
+		<div class="featured__head">
+			<div class="featured__teaser">
+				<span class="featured__teaser-label">مجموعة الأسبوع</span>
+				<span class="featured__teaser-title">AURORA / 01</span>
+				<span class="featured__teaser-text">خمس قطع، إصدار محدود، تدرّجات شفق تُطبع مرة واحدة.</span>
+			</div>
+			<a class="featured__teaser-cta" href="#collections">
+				افتح المجموعة
+				<svg class="unmute-icon unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+			</a>
 		</div>
-		<ul class="products unmute-products">
-			<li class="product type-product"><article class="unmute-card">
-				<div class="unmute-card__badges"><span class="unmute-badge unmute-badge--new">New</span></div>
-				<a class="unmute-card__media" href="product.html" tabindex="-1" aria-hidden="true"><img src="img/products/fragmented-mind.jpg" alt="Fragmented Mind tee" loading="lazy"></a>
-				<div class="unmute-card__body">
-					<h3 class="unmute-card__title"><a href="product.html">Fragmented Mind</a></h3>
-					<div class="unmute-card__price"><span class="price">$39.00</span></div>
-					<div class="unmute-card__footer"><a href="#" class="button add_to_cart_button">Add to cart</a></div>
-				</div>
-			</article></li>
-			<li class="product type-product"><article class="unmute-card">
-				<a class="unmute-card__media" href="product.html" tabindex="-1" aria-hidden="true"><img src="img/products/no-fixed-shape.jpg" alt="No Fixed Shape hoodie" loading="lazy"></a>
-				<div class="unmute-card__body">
-					<h3 class="unmute-card__title"><a href="product.html">No Fixed Shape</a></h3>
-					<div class="unmute-card__price"><span class="price">$85.00</span></div>
-					<div class="unmute-card__footer"><a href="#" class="button product_type_variable">Select options</a></div>
-				</div>
-			</article></li>
-			<li class="product type-product"><article class="unmute-card">
-				<div class="unmute-card__badges"><span class="unmute-badge unmute-badge--sale">-19%</span></div>
-				<a class="unmute-card__media" href="product.html" tabindex="-1" aria-hidden="true"><img src="img/products/butterfly-effect.jpg" alt="Butterfly Effect tee" loading="lazy"></a>
-				<div class="unmute-card__body">
-					<h3 class="unmute-card__title"><a href="product.html">Butterfly Effect</a></h3>
-					<div class="unmute-card__price"><span class="price"><ins>$39.00</ins> <del>$48.00</del></span></div>
-					<div class="unmute-card__footer"><a href="#" class="button add_to_cart_button">Add to cart</a></div>
-				</div>
-			</article></li>
-			<li class="product type-product"><article class="unmute-card">
-				<a class="unmute-card__media" href="product.html" tabindex="-1" aria-hidden="true"><img src="img/products/lunar-thoughts.jpg" alt="Lunar Thoughts tee" loading="lazy"></a>
-				<div class="unmute-card__body">
-					<h3 class="unmute-card__title"><a href="product.html">Lunar Thoughts</a></h3>
-					<div class="unmute-card__price"><span class="price">$39.00</span></div>
-					<div class="unmute-card__footer"><a href="#" class="button add_to_cart_button">Add to cart</a></div>
-				</div>
-			</article></li>
-			<li class="product type-product"><article class="unmute-card">
-				<div class="unmute-card__badges"><span class="unmute-badge unmute-badge--best">Bestseller</span></div>
-				<a class="unmute-card__media" href="product.html" tabindex="-1" aria-hidden="true"><img src="img/products/silent-rebellion.jpg" alt="Silent Rebellion hoodie" loading="lazy"></a>
-				<div class="unmute-card__body">
-					<h3 class="unmute-card__title"><a href="product.html">Silent Rebellion</a></h3>
-					<div class="unmute-card__price"><span class="price">$89.00</span></div>
-					<div class="unmute-card__footer"><a href="#" class="button product_type_variable">Select options</a></div>
-				</div>
-			</article></li>
-			<li class="product type-product"><article class="unmute-card">
-				<div class="unmute-card__badges"><span class="unmute-badge unmute-badge--new">New</span></div>
-				<a class="unmute-card__media" href="product.html" tabindex="-1" aria-hidden="true"><img src="img/products/static-bloom.jpg" alt="Static Bloom cropped tee" loading="lazy"></a>
-				<div class="unmute-card__body">
-					<h3 class="unmute-card__title"><a href="product.html">Static Bloom</a></h3>
-					<div class="unmute-card__price"><span class="price">$42.00</span></div>
-					<div class="unmute-card__footer"><a href="#" class="button add_to_cart_button">Add to cart</a></div>
-				</div>
-			</article></li>
+
+		<ul class="products unmute-products featured__grid columns-4">
+			<li class="product type-product">
+				<article class="unmute-card">
+					<div class="unmute-card__badges"><span class="unmute-badge unmute-badge--best">الأكثر مبيعًا</span></div>
+					<a class="unmute-card__media" href="product.html" tabindex="-1" aria-hidden="true"><img src="img/products/abstract-flow-tee.jpg" alt="" loading="lazy"></a>
+					<div class="unmute-card__body">
+						<h3 class="unmute-card__title"><a href="product.html">Abstract Flow Tee</a></h3>
+						<div class="unmute-card__price"><span class="woocommerce-Price-amount">2,900 <span class="woocommerce-Price-currencySymbol">د.ج</span></span></div>
+						<div class="unmute-card__footer"><a class="button add_to_cart_button" href="#">أضف إلى الحقيبة</a></div>
+					</div>
+				</article>
+			</li>
+			<li class="product type-product">
+				<article class="unmute-card">
+					<a class="unmute-card__media" href="product.html" tabindex="-1" aria-hidden="true"><img src="img/products/minimal-orbit-tee.jpg" alt="" loading="lazy"></a>
+					<div class="unmute-card__body">
+						<h3 class="unmute-card__title"><a href="product.html">Minimal Orbit Tee</a></h3>
+						<div class="unmute-card__price"><span class="woocommerce-Price-amount">2,500 <span class="woocommerce-Price-currencySymbol">د.ج</span></span></div>
+						<div class="unmute-card__footer"><a class="button add_to_cart_button" href="#">أضف إلى الحقيبة</a></div>
+					</div>
+				</article>
+			</li>
+			<li class="product type-product">
+				<article class="unmute-card">
+					<div class="unmute-card__badges"><span class="unmute-badge unmute-badge--new">جديد</span></div>
+					<a class="unmute-card__media" href="product.html" tabindex="-1" aria-hidden="true"><img src="img/products/aurora-hoodie.jpg" alt="" loading="lazy"></a>
+					<div class="unmute-card__body">
+						<h3 class="unmute-card__title"><a href="product.html">Aurora Hoodie</a></h3>
+						<div class="unmute-card__price"><span class="woocommerce-Price-amount">5,500 <span class="woocommerce-Price-currencySymbol">د.ج</span></span></div>
+						<div class="unmute-card__footer"><a class="button" href="#">اختر الخيارات</a></div>
+					</div>
+				</article>
+			</li>
+			<li class="product type-product">
+				<article class="unmute-card">
+					<a class="unmute-card__media" href="product.html" tabindex="-1" aria-hidden="true"><img src="img/products/butterfly-effect.jpg" alt="" loading="lazy"></a>
+					<div class="unmute-card__body">
+						<h3 class="unmute-card__title"><a href="product.html">Butterfly Dream Tee</a></h3>
+						<div class="unmute-card__price"><span class="woocommerce-Price-amount">2,900 <span class="woocommerce-Price-currencySymbol">د.ج</span></span></div>
+						<div class="unmute-card__footer"><a class="button add_to_cart_button" href="#">أضف إلى الحقيبة</a></div>
+					</div>
+				</article>
+			</li>
+			<li class="product type-product">
+				<article class="unmute-card">
+					<a class="unmute-card__media" href="product.html" tabindex="-1" aria-hidden="true"><img src="img/products/silent-rebellion.jpg" alt="" loading="lazy"></a>
+					<div class="unmute-card__body">
+						<h3 class="unmute-card__title"><a href="product.html">Silent Rebellion Hoodie</a></h3>
+						<div class="unmute-card__price"><span class="woocommerce-Price-amount">5,900 <span class="woocommerce-Price-currencySymbol">د.ج</span></span></div>
+						<div class="unmute-card__footer"><a class="button" href="#">اختر الخيارات</a></div>
+					</div>
+				</article>
+			</li>
+			<li class="unmute-promo-cell product">
+				<a class="aurora-card" href="#collections">
+					<span class="aurora-card__media" aria-hidden="true"><img src="../unmute/assets/img/collection-aurora.jpg" alt="" loading="lazy"></span>
+					<span class="aurora-card__top">
+						<span class="aurora-card__tag">مجموعة محدودة</span>
+						<svg class="unmute-sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5c1 6.2 3.3 8.5 9.5 9.5-6.2 1-8.5 3.3-9.5 9.5-1-6.2-3.3-8.5-9.5-9.5 6.2-1 8.5-3.3 9.5-9.5Z"/></svg>
+					</span>
+					<span class="aurora-card__body">
+						<span class="aurora-card__kicker">مجموعة</span>
+						<span class="aurora-card__title">THE<em>AURORA</em></span>
+						<span class="aurora-card__text">قطع مستوحاة من الشفق القطبي: تدرّجات بنفسجية وفيروزية تتغيّر مع الحركة.</span>
+						<span class="aurora-card__link">اكتشف المجموعة <svg class="unmute-icon unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span>
+					</span>
+				</a>
+			</li>
 		</ul>
 	</div>
 </section>
 
 <section class="section collections" id="collections">
+	<div class="unmute-aurora unmute-aurora--calm" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
 	<div class="unmute-container">
 		<div class="sec-head">
 			<svg class="unmute-sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5c1 6.2 3.3 8.5 9.5 9.5-6.2 1-8.5 3.3-9.5 9.5-1-6.2-3.3-8.5-9.5-9.5 6.2-1 8.5-3.3 9.5-9.5Z"/></svg>
-			<h2 class="sec-head__title">Art Collections</h2>
+			<h2 class="sec-head__title">مجموعاتنا الفنية</h2>
 			<span class="sec-head__rule" aria-hidden="true"></span>
 		</div>
 		<div class="collections__grid">
-			<a class="col-card col-card--v0" href="#"><span class="col-card__veil" aria-hidden="true"></span><span class="col-card__inner"><span class="col-card__name">The Unsaid</span><span class="col-card__count">6 pieces</span></span><svg class="unmute-icon col-card__arrow unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-			<a class="col-card col-card--v1" href="#"><span class="col-card__veil" aria-hidden="true"></span><span class="col-card__inner"><span class="col-card__name">Dark Butterflies</span><span class="col-card__count">4 pieces</span></span><svg class="unmute-icon col-card__arrow unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-			<a class="col-card col-card--v2" href="#"><span class="col-card__veil" aria-hidden="true"></span><span class="col-card__inner"><span class="col-card__name">Lunar Thoughts</span><span class="col-card__count">5 pieces</span></span><svg class="unmute-icon col-card__arrow unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-			<a class="col-card col-card--v0" href="#"><span class="col-card__veil" aria-hidden="true"></span><span class="col-card__inner"><span class="col-card__name">Silent Rebellion</span><span class="col-card__count">4 pieces</span></span><svg class="unmute-icon col-card__arrow unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-			<a class="col-card col-card--v1" href="#"><span class="col-card__veil" aria-hidden="true"></span><span class="col-card__inner"><span class="col-card__name">Fragmented Mind</span><span class="col-card__count">6 pieces</span></span><svg class="unmute-icon col-card__arrow unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
-			<a class="col-card col-card--v2" href="#"><span class="col-card__veil" aria-hidden="true"></span><span class="col-card__inner"><span class="col-card__name">Static Sessions</span><span class="col-card__count">3 pieces</span></span><svg class="unmute-icon col-card__arrow unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+			<a class="col-card col-card--v0" href="shop.html"><span class="col-card__veil" aria-hidden="true"></span><svg class="unmute-icon col-card__arrow unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg><span class="col-card__inner"><span class="col-card__name">THE AURORA</span><span class="col-card__count">8 قطع</span></span></a>
+			<a class="col-card col-card--v1" href="shop.html"><span class="col-card__veil" aria-hidden="true"></span><svg class="unmute-icon col-card__arrow unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg><span class="col-card__inner"><span class="col-card__name">THE UNSAID</span><span class="col-card__count">6 قطع</span></span></a>
+			<a class="col-card col-card--v2" href="shop.html"><span class="col-card__veil" aria-hidden="true"></span><svg class="unmute-icon col-card__arrow unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg><span class="col-card__inner"><span class="col-card__name">DARK BUTTERFLIES</span><span class="col-card__count">5 قطع</span></span></a>
+			<a class="col-card col-card--v1" href="shop.html"><span class="col-card__veil" aria-hidden="true"></span><svg class="unmute-icon col-card__arrow unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg><span class="col-card__inner"><span class="col-card__name">LUNAR THOUGHTS</span><span class="col-card__count">4 قطع</span></span></a>
+			<a class="col-card col-card--v0" href="shop.html"><span class="col-card__veil" aria-hidden="true"></span><svg class="unmute-icon col-card__arrow unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg><span class="col-card__inner"><span class="col-card__name">SILENT REBELLION</span><span class="col-card__count">7 قطع</span></span></a>
+			<a class="col-card col-card--v2" href="shop.html"><span class="col-card__veil" aria-hidden="true"></span><svg class="unmute-icon col-card__arrow unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg><span class="col-card__inner"><span class="col-card__name">STATIC SESSIONS</span><span class="col-card__count">3 قطع</span></span></a>
 		</div>
 	</div>
 </section>
 
 <section class="section story" id="story">
+	<div class="unmute-aurora unmute-aurora--calm" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
 	<div class="unmute-container story__grid">
 		<div class="story__media">
-			<img src="../unmute/assets/img/story-placeholder.jpg" alt="UNMUTE studio" loading="lazy">
+			<img src="../unmute/assets/img/story-aurora.jpg" alt="استوديو UNMUTE" loading="lazy">
 			<svg class="unmute-sparkle story__spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5c1 6.2 3.3 8.5 9.5 9.5-6.2 1-8.5 3.3-9.5 9.5-1-6.2-3.3-8.5-9.5-9.5 6.2-1 8.5-3.3 9.5-9.5Z"/></svg>
 		</div>
 		<div class="story__content">
 			<svg class="unmute-sparkle" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5c1 6.2 3.3 8.5 9.5 9.5-6.2 1-8.5 3.3-9.5 9.5-1-6.2-3.3-8.5-9.5-9.5 6.2-1 8.5-3.3 9.5-9.5Z"/></svg>
-			<blockquote class="story__quote">Your feelings deserve a voice. Wear them.</blockquote>
-			<p class="story__text">UNMUTE began with a simple belief: silence is not emptiness. Every piece starts as an original drawing — a character, a mood, a confession — then moves onto heavyweight cotton in limited, numbered runs. No borrowed characters. No mass stock. Just art that says the part of you that stays quiet.</p>
-			<a class="unmute-btn unmute-btn--ghost" href="#">Our Story</a>
+			<span class="unmute-eyebrow">EXPRESS WITHOUT LIMITS</span>
+			<blockquote class="story__quote">عقلك لا يعرف زيًّا رسميًا.</blockquote>
+			<div class="story__text"><p>بدأت UNMUTE من فكرة واحدة: الصمت ليس فراغًا. كل قطعة تبدأ رسمًا أصليًا — شخصية، حالة، اعتراف — ثم تنتقل إلى قطن ثقيل بإصدارات مرقّمة ومحدودة. لا شخصيات مستعارة، ولا مخزون ضخم. فقط فنّ يقول الجزء الذي يبقى صامتًا فيك.</p></div>
+			<a class="unmute-btn unmute-btn--ghost" href="#">قصّتنا</a>
 		</div>
 	</div>
 </section>
 
-<section class="section newsletter" id="signal">
+<section class="newsletter" id="signal">
 	<div class="unmute-container">
 		<div class="newsletter__band">
+			<div class="unmute-aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
 			<div class="newsletter__copy">
-				<h2>Join the Signal</h2>
-				<p>First access to new drops, archive sales and studio notes. No noise, ever.</p>
+				<h2>ابقَ على تواصل معنا</h2>
+				<p>كن أول من يعرف عن التصاميم الجديدة والعروض الخاصة. رسالة واحدة كل أسبوعين، بلا ضجيج.</p>
 			</div>
-			<form class="newsletter__form" method="post" action="#" data-unmute-newsform="local">
-				<input type="text" name="unmute_hp" class="unmute-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-				<label class="screen-reader-text" for="unmute-news-email">Email address</label>
-				<input id="unmute-news-email" type="email" name="email" placeholder="your@email.com" required>
-				<button class="unmute-btn unmute-btn--primary" type="submit"><svg class="unmute-icon unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 16-8-6 16-2.5-6.5L4 12Z"/></svg><span>Subscribe</span></button>
-			</form>
-			<p class="newsletter__note" role="status" aria-live="polite">By subscribing you agree to our privacy policy. Unsubscribe anytime.</p>
+			<div class="newsletter__form-wrap">
+				<form class="newsletter__form" method="post" action="#" data-unmute-newsform="local">
+					<input type="text" name="unmute_hp" class="unmute-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+					<label class="screen-reader-text" for="unmute-news-email-band">البريد الإلكتروني</label>
+					<input id="unmute-news-email-band" type="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+					<button class="unmute-btn unmute-btn--primary" type="submit"><svg class="unmute-icon unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 16-8-6 16-2.5-6.5L4 12Z"/></svg><span>اشترك</span></button>
+				</form>
+				<p class="newsletter__note" role="status" aria-live="polite">بالاشتراك أنت توافق على سياسة الخصوصية. يمكنك إلغاء الاشتراك في أي وقت.</p>
+			</div>
 		</div>
 	</div>
 </section>
@@ -189,51 +244,63 @@
 </main>
 
 <footer class="unmute-footer">
-	<div class="unmute-container unmute-footer__grid">
-		<div class="unmute-footer__brand">
-			<a class="unmute-brand" href="index.html"><svg class="unmute-sparkle unmute-brand__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5c1 6.2 3.3 8.5 9.5 9.5-6.2 1-8.5 3.3-9.5 9.5-1-6.2-3.3-8.5-9.5-9.5 6.2-1 8.5-3.3 9.5-9.5Z"/></svg><span class="unmute-brand__name">UNMUTE</span></a>
-			<p class="unmute-footer__blurb">Art-driven darkwear for the feelings you can't say out loud. Original characters, limited runs, heavyweight cotton.</p>
-			<ul class="unmute-socials">
-				<li><a class="unmute-social" href="#" aria-label="Instagram"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r=".9" fill="currentColor" stroke="none"/></svg></a></li>
-				<li><a class="unmute-social" href="#" aria-label="TikTok"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4v9.5a3.5 3.5 0 1 1-3-3.46"/><path d="M14 5.5c.8 2 2.4 3.2 4.5 3.4"/></svg></a></li>
-				<li><a class="unmute-social" href="#" aria-label="YouTube"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3.5"/><path d="m10.5 9.5 5 2.5-5 2.5v-5Z"/></svg></a></li>
-				<li><a class="unmute-social" href="#" aria-label="Telegram"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 16-8-6 16-2.5-6.5L4 12Z"/></svg></a></li>
-			</ul>
+	<div class="unmute-aurora unmute-aurora--calm" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
+	<div class="unmute-container">
+		<div class="unmute-footer__top">
+			<div class="unmute-footer__signup">
+				<h2>ابقَ على تواصل معنا</h2>
+				<p>كن أول من يعرف عن التصاميم الجديدة والعروض الخاصة.</p>
+				<form class="unmute-footer__form" method="post" action="#" data-unmute-newsform="local">
+					<input type="text" name="unmute_hp" class="unmute-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+					<label class="screen-reader-text" for="unmute-news-email-footer">البريد الإلكتروني</label>
+					<input id="unmute-news-email-footer" type="email" name="email" placeholder="بريدك الإلكتروني" required>
+					<button class="unmute-btn unmute-btn--primary" type="submit"><svg class="unmute-icon unmute-icon--flip-rtl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 16-8-6 16-2.5-6.5L4 12Z"/></svg><span>اشترك</span></button>
+				</form>
+				<p class="unmute-footer__note" role="status" aria-live="polite">بلا ضجيج، بلا بريد مزعج.</p>
+			</div>
+			<div class="unmute-footer__social">
+				<h3 class="unmute-footer__social-title">تابعنا</h3>
+				<ul class="unmute-socials">
+					<li><a class="unmute-social" href="#" aria-label="Instagram"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r=".9" fill="currentColor" stroke="none"/></svg></a></li>
+					<li><a class="unmute-social" href="#" aria-label="TikTok"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4v9.5a3.5 3.5 0 1 1-3-3.46"/><path d="M14 5.5c.8 2 2.4 3.2 4.5 3.4"/></svg></a></li>
+					<li><a class="unmute-social" href="#" aria-label="YouTube"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3.5"/><path d="m10.5 9.5 5 2.5-5 2.5v-5Z"/></svg></a></li>
+					<li><a class="unmute-social" href="#" aria-label="Telegram"><svg class="unmute-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 16-8-6 16-2.5-6.5L4 12Z"/></svg></a></li>
+				</ul>
+			</div>
+			<div class="unmute-footer__brand">
+				<a class="unmute-brand" href="index.html">
+					<svg class="unmute-sparkle unmute-brand__mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5c1 6.2 3.3 8.5 9.5 9.5-6.2 1-8.5 3.3-9.5 9.5-1-6.2-3.3-8.5-9.5-9.5 6.2-1 8.5-3.3 9.5-9.5Z"/></svg>
+					<span class="unmute-brand__name">UNMUTE</span>
+				</a>
+				<p class="unmute-footer__blurb">أزياء فنية لمن لا يطلبون إذنًا في التعبير. رسوم أصلية، إصدارات محدودة، قطن ثقيل — وألوان شفق لا تُقلَّد.</p>
+			</div>
 		</div>
-		<nav class="unmute-footer__col" aria-label="Shop">
-			<h3 class="unmute-footer__title">Shop</h3>
-			<ul>
-				<li><a href="shop.html">All pieces</a></li>
-				<li><a href="#">The Unsaid</a></li>
-				<li><a href="#">Dark Butterflies</a></li>
-				<li><a href="#">Lunar Thoughts</a></li>
-				<li><a href="#">Silent Rebellion</a></li>
-			</ul>
-		</nav>
-		<nav class="unmute-footer__col" aria-label="Company">
-			<h3 class="unmute-footer__title">Company</h3>
-			<ul>
-				<li><a href="#">Journal</a></li>
-				<li><a href="#story">Our story</a></li>
-				<li><a href="#signal">Newsletter</a></li>
-			</ul>
-		</nav>
-		<div class="unmute-footer__col">
-			<h3 class="unmute-footer__title">Help &amp; contact</h3>
-			<ul>
-				<li><a href="#">Privacy policy</a></li>
-				<li><a href="#">Shipping &amp; returns</a></li>
-				<li><a href="mailto:studio@unmute.example">studio@unmute.example</a></li>
-			</ul>
+		<div class="unmute-footer__cols">
+			<nav class="unmute-footer__col" aria-label="المتجر">
+				<h3 class="unmute-footer__title">المتجر</h3>
+				<ul><li><a href="shop.html">كل القطع</a></li><li><a href="shop.html">THE AURORA</a></li><li><a href="shop.html">THE UNSAID</a></li><li><a href="shop.html">DARK BUTTERFLIES</a></li><li><a href="shop.html">LUNAR THOUGHTS</a></li></ul>
+			</nav>
+			<nav class="unmute-footer__col" aria-label="العلامة">
+				<h3 class="unmute-footer__title">العلامة</h3>
+				<ul><li><a href="#">المدونة</a></li><li><a href="#story">قصّتنا</a></li><li><a href="#signal">النشرة البريدية</a></li></ul>
+			</nav>
+			<div class="unmute-footer__col">
+				<h3 class="unmute-footer__title">المساعدة والتواصل</h3>
+				<ul><li><a href="#">سياسة الخصوصية</a></li><li><a href="#">الشحن والإرجاع</a></li><li><a href="mailto:studio@unmute.example">studio@unmute.example</a></li></ul>
+			</div>
+			<nav class="unmute-footer__col" aria-label="الحساب">
+				<h3 class="unmute-footer__title">الحساب</h3>
+				<ul><li><a href="#">حسابي</a></li><li><a href="#">حقيبة التسوق</a></li><li><a href="#">إتمام الشراء</a></li></ul>
+			</nav>
 		</div>
-	</div>
-	<div class="unmute-container unmute-footer__bottom">
-		<p>© 2026 UNMUTE — Wear What You Feel.</p>
-		<p class="unmute-footer__credits">Theme preview — static harness of the UNMUTE WordPress theme</p>
+		<div class="unmute-footer__bottom">
+			<p>© 2026 UNMUTE — EXPRESS WITHOUT LIMITS.</p>
+			<p class="unmute-footer__credits">معاينة القالب — نسخة ثابتة من قالب UNMUTE لووردبريس</p>
+		</div>
 	</div>
 </footer>
 
-<script>window.unmuteData = { ajaxUrl: '#', nonce: 'preview' };</script>
+<script>window.unmuteData = { ajaxUrl: '#', nonce: 'preview', isRtl: '1', i18n: { error: 'تعذّر الإرسال. حاول مرة أخرى.', sending: 'جارٍ الإرسال…' } };</script>
 <script src="../unmute/assets/js/main.js"></script>
 </body>
 </html>

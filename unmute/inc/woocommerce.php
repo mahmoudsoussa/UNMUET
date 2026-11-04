@@ -3,10 +3,11 @@
  * UNMUTE — WooCommerce integration.
  *
  * Design decisions:
- * - No core WooCommerce template overrides. The shop loop is rebuilt through
- *   WooCommerce's own hook API (removing the default loop-item callbacks and
- *   rendering `unmute_product_card()` instead), which keeps the theme
- *   upgrade-safe across WooCommerce versions.
+ * - No core WooCommerce template overrides. The shop loop keeps WooCommerce's
+ *   own <ul>/<li> wrapper and only its *inner* markup is replaced through the
+ *   loop hooks (`unmute_product_card_inner()`), which keeps the theme
+ *   upgrade-safe and the markup valid.
+ * - The loop wrapper class is filtered so the theme's grid CSS applies.
  * - Single product, cart, checkout and account pages use WooCommerce core
  *   templates, restyled with CSS and extended through hooks only.
  *
@@ -22,13 +23,13 @@ if ( ! class_exists( 'WooCommerce' ) ) {
 }
 
 /* ------------------------------------------------------------------------
- * Loop: replace default card output with the UNMUTE card.
+ * Loop: replace the inner card markup with the UNMUTE card.
  * ---------------------------------------------------------------------- */
 
 add_action(
 	'wp',
 	function () {
-		if ( ! function_exists( 'unmute_product_card' ) ) {
+		if ( ! function_exists( 'unmute_product_card_inner' ) ) {
 			return;
 		}
 		remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
@@ -43,10 +44,28 @@ add_action(
 		add_action(
 			'woocommerce_before_shop_loop_item',
 			function () {
-				unmute_product_card();
+				global $product;
+				if ( ! is_a( $product, 'WC_Product' ) ) {
+					return;
+				}
+				unmute_product_card_inner( $product );
 			},
 			10
 		);
+	}
+);
+
+/* ------------------------------------------------------------------------
+ * Loop wrapper: let the theme's grid own the <ul>.
+ * ---------------------------------------------------------------------- */
+
+add_filter(
+	'woocommerce_product_loop_start',
+	function () {
+		$columns = (int) wc_get_loop_prop( 'columns' );
+		$columns = $columns ? $columns : max( 2, min( 4, (int) unmute_option( 'shop_columns' ) ) );
+
+		return '<ul class="products unmute-products columns-' . esc_attr( (string) $columns ) . '">';
 	}
 );
 
@@ -114,7 +133,8 @@ add_filter(
 add_filter(
 	'woocommerce_add_to_cart_fragments',
 	function ( $fragments ) {
-		$fragments['span.unmute-cart-count'] = '<span class="unmute-cart-count">' . esc_html( WC()->cart->get_cart_contents_count() ) . '</span>';
+		$count = WC()->cart ? WC()->cart->get_cart_contents_count() : 0;
+		$fragments['span.unmute-cart-count'] = '<span class="unmute-cart-count">' . esc_html( (string) $count ) . '</span>';
 		return $fragments;
 	}
 );
@@ -133,10 +153,10 @@ add_action(
 		}
 		echo '<section class="unmute-product-info">';
 		if ( $shipping ) {
-			echo '<div class="unmute-product-info__item">' . unmute_icon( 'truck' ) . '<div><h3>' . esc_html__( 'Shipping & production', 'unmute' ) . '</h3><p>' . esc_html( $shipping ) . '</p></div></div>';
+			echo '<div class="unmute-product-info__item">' . unmute_icon( 'truck' ) . '<div><h3>' . esc_html__( 'الشحن والإنتاج', 'unmute' ) . '</h3><p>' . esc_html( wp_strip_all_tags( $shipping ) ) . '</p></div></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotSanitized
 		}
 		if ( $returns ) {
-			echo '<div class="unmute-product-info__item">' . unmute_icon( 'shield' ) . '<div><h3>' . esc_html__( 'Returns & exchanges', 'unmute' ) . '</h3><p>' . esc_html( $returns ) . '</p></div></div>';
+			echo '<div class="unmute-product-info__item">' . unmute_icon( 'shield' ) . '<div><h3>' . esc_html__( 'الإرجاع والاستبدال', 'unmute' ) . '</h3><p>' . esc_html( wp_strip_all_tags( $returns ) ) . '</p></div></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotSanitized
 		}
 		echo '</section>';
 	},
@@ -186,9 +206,9 @@ add_action(
 			}
 			foreach ( (array) $wp_filter[ $hook ]->callbacks as $priority => $callbacks ) {
 				foreach ( $callbacks as $callback ) {
-					$fn    = $callback['function'];
+					$fn    = isset( $callback['function'] ) ? $callback['function'] : null;
 					$class = '';
-					if ( is_array( $fn ) && is_object( $fn[0] ) ) {
+					if ( is_array( $fn ) && isset( $fn[0] ) && is_object( $fn[0] ) ) {
 						$class = get_class( $fn[0] );
 					} elseif ( is_string( $fn ) ) {
 						$class = $fn;
@@ -204,14 +224,34 @@ add_action(
 );
 
 /* ------------------------------------------------------------------------
- * Related products: match the shop grid columns.
+ * Related products: follow the shop grid.
  * ---------------------------------------------------------------------- */
 
 add_filter(
 	'woocommerce_output_related_products_args',
 	function ( $args ) {
-		$args['columns'] = 4;
+		$args['columns']        = max( 2, min( 4, (int) unmute_option( 'shop_columns' ) ) );
 		$args['posts_per_page'] = 4;
 		return $args;
 	}
+);
+
+/* ------------------------------------------------------------------------
+ * Toolbar: wrap the result count + ordering so they can sit side by side.
+ * ---------------------------------------------------------------------- */
+
+add_action(
+	'woocommerce_before_shop_loop',
+	function () {
+		echo '<div class="unmute-shop-toolbar">';
+	},
+	15
+);
+
+add_action(
+	'woocommerce_before_shop_loop',
+	function () {
+		echo '</div><!-- .unmute-shop-toolbar -->';
+	},
+	35
 );

@@ -32,8 +32,8 @@ get_header();
 		the_posts_pagination(
 			array(
 				'mid_size'  => 1,
-				'prev_text' => esc_html__( 'Previous', 'unmute' ),
-				'next_text' => esc_html__( 'Next', 'unmute' ),
+				'prev_text' => esc_html__( 'السابق', 'unmute' ),
+				'next_text' => esc_html__( 'التالي', 'unmute' ),
 			)
 		);
 		?>

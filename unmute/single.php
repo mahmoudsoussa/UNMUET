@@ -23,7 +23,7 @@ get_header();
 				<p class="post-single__meta">
 					<?php
 					/* translators: %s: author name. */
-					echo esc_html( sprintf( __( 'By %s', 'unmute' ), get_the_author() ) );
+					echo esc_html( sprintf( __( 'بقلم %s', 'unmute' ), get_the_author() ) );
 					?>
 				</p>
 			</header>
@@ -51,10 +51,11 @@ get_header();
 			<?php endif; ?>
 
 			<?php
-			the_post_pagination(
+			the_post_navigation(
 				array(
-					'prev_text' => esc_html__( 'Previous story', 'unmute' ),
-					'next_text' => esc_html__( 'Next story', 'unmute' ),
+					'prev_text' => '<span class="post-nav__label">' . esc_html__( 'القصة السابقة', 'unmute' ) . '</span><span class="post-nav__title">%title</span>',
+					'next_text' => '<span class="post-nav__label">' . esc_html__( 'القصة التالية', 'unmute' ) . '</span><span class="post-nav__title">%title</span>',
+					'class'     => 'post-navigation unmute-post-nav',
 				)
 			);
 			?>

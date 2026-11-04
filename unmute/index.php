@@ -13,8 +13,8 @@ get_header();
 ?>
 <div class="unmute-container unmute-page">
 	<header class="page-head">
-		<h1 class="page-head__title"><?php esc_html_e( 'Journal', 'unmute' ); ?></h1>
-		<p class="page-head__sub"><?php esc_html_e( 'Notes, drops and studio stories from UNMUTE.', 'unmute' ); ?></p>
+		<h1 class="page-head__title"><?php esc_html_e( 'المدونة', 'unmute' ); ?></h1>
+		<p class="page-head__sub"><?php esc_html_e( 'ملاحظات وإصدارات وقصص من الاستوديو.', 'unmute' ); ?></p>
 	</header>
 
 	<?php if ( have_posts() ) : ?>
@@ -30,8 +30,8 @@ get_header();
 		the_posts_pagination(
 			array(
 				'mid_size'  => 1,
-				'prev_text' => esc_html__( 'Previous', 'unmute' ),
-				'next_text' => esc_html__( 'Next', 'unmute' ),
+				'prev_text' => esc_html__( 'السابق', 'unmute' ),
+				'next_text' => esc_html__( 'التالي', 'unmute' ),
 			)
 		);
 		?>

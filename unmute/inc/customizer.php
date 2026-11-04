@@ -30,26 +30,27 @@ if ( ! function_exists( 'unmute_customizer_schema' ) ) {
 			array( 'hero_eyebrow', 'text', __( 'Hero eyebrow line', 'unmute' ), 'hero' ),
 			array( 'hero_title', 'text', __( 'Hero headline', 'unmute' ), 'hero', array( 'transport' => 'postMessage' ) ),
 			array( 'hero_accent', 'text', __( 'Accent word inside the headline', 'unmute' ), 'hero', array( 'transport' => 'postMessage' ) ),
+			array( 'hero_sub', 'text', __( 'Arabic sub-headline', 'unmute' ), 'hero', array( 'transport' => 'postMessage' ) ),
 			array( 'hero_text', 'textarea', __( 'Hero description', 'unmute' ), 'hero', array( 'transport' => 'postMessage' ) ),
 			array( 'hero_cta', 'text', __( 'Primary button label', 'unmute' ), 'hero', array( 'transport' => 'postMessage' ) ),
 			array( 'hero_url', 'url', __( 'Primary button link (empty = shop page)', 'unmute' ), 'hero' ),
 			array( 'hero_cta2', 'text', __( 'Secondary button label', 'unmute' ), 'hero' ),
 			array( 'hero_url2', 'url', __( 'Secondary button link (empty = collections section)', 'unmute' ), 'hero' ),
 
-			// --- Features ---------------------------------------------------
-			array( 'features_show', 'checkbox', __( 'Show features strip', 'unmute' ), 'features' ),
-			array( 'f1_icon', 'select', __( 'Feature 1 icon', 'unmute' ), 'features', array( 'choices' => unmute_icon_choices() ) ),
-			array( 'f1_title', 'text', __( 'Feature 1 title', 'unmute' ), 'features' ),
-			array( 'f1_text', 'text', __( 'Feature 1 text', 'unmute' ), 'features' ),
-			array( 'f2_icon', 'select', __( 'Feature 2 icon', 'unmute' ), 'features', array( 'choices' => unmute_icon_choices() ) ),
-			array( 'f2_title', 'text', __( 'Feature 2 title', 'unmute' ), 'features' ),
-			array( 'f2_text', 'text', __( 'Feature 2 text', 'unmute' ), 'features' ),
-			array( 'f3_icon', 'select', __( 'Feature 3 icon', 'unmute' ), 'features', array( 'choices' => unmute_icon_choices() ) ),
-			array( 'f3_title', 'text', __( 'Feature 3 title', 'unmute' ), 'features' ),
-			array( 'f3_text', 'text', __( 'Feature 3 text', 'unmute' ), 'features' ),
-			array( 'f4_icon', 'select', __( 'Feature 4 icon', 'unmute' ), 'features', array( 'choices' => unmute_icon_choices() ) ),
-			array( 'f4_title', 'text', __( 'Feature 4 title', 'unmute' ), 'features' ),
-			array( 'f4_text', 'text', __( 'Feature 4 text', 'unmute' ), 'features' ),
+			// --- Benefits ---------------------------------------------------
+			array( 'features_show', 'checkbox', __( 'Show benefits strip', 'unmute' ), 'features' ),
+			array( 'f1_icon', 'select', __( 'Benefit 1 icon', 'unmute' ), 'features', array( 'choices' => unmute_icon_choices() ) ),
+			array( 'f1_title', 'text', __( 'Benefit 1 title', 'unmute' ), 'features' ),
+			array( 'f1_text', 'text', __( 'Benefit 1 text', 'unmute' ), 'features' ),
+			array( 'f2_icon', 'select', __( 'Benefit 2 icon', 'unmute' ), 'features', array( 'choices' => unmute_icon_choices() ) ),
+			array( 'f2_title', 'text', __( 'Benefit 2 title', 'unmute' ), 'features' ),
+			array( 'f2_text', 'text', __( 'Benefit 2 text', 'unmute' ), 'features' ),
+			array( 'f3_icon', 'select', __( 'Benefit 3 icon', 'unmute' ), 'features', array( 'choices' => unmute_icon_choices() ) ),
+			array( 'f3_title', 'text', __( 'Benefit 3 title', 'unmute' ), 'features' ),
+			array( 'f3_text', 'text', __( 'Benefit 3 text', 'unmute' ), 'features' ),
+			array( 'f4_icon', 'select', __( 'Benefit 4 icon', 'unmute' ), 'features', array( 'choices' => unmute_icon_choices() ) ),
+			array( 'f4_title', 'text', __( 'Benefit 4 title', 'unmute' ), 'features' ),
+			array( 'f4_text', 'text', __( 'Benefit 4 text', 'unmute' ), 'features' ),
 
 			// --- Featured products ------------------------------------------
 			array( 'featured_show', 'checkbox', __( 'Show featured products', 'unmute' ), 'featured' ),
@@ -68,7 +69,17 @@ if ( ! function_exists( 'unmute_customizer_schema' ) ) {
 					),
 				)
 			),
-			array( 'featured_count', 'number', __( 'Number of products', 'unmute' ), 'featured', array( 'min' => 2, 'max' => 16 ) ),
+			array( 'featured_count', 'number', __( 'Number of products (7 fills the promo grid)', 'unmute' ), 'featured', array( 'min' => 2, 'max' => 16 ) ),
+
+			// --- Featured collection card -----------------------------------
+			array( 'promo_show', 'checkbox', __( 'Show featured collection card (THE AURORA)', 'unmute' ), 'promo' ),
+			array( 'promo_tag', 'text', __( 'Corner tag', 'unmute' ), 'promo' ),
+			array( 'promo_kicker', 'text', __( 'Kicker line above the title', 'unmute' ), 'promo' ),
+			array( 'promo_title', 'text', __( 'Collection name', 'unmute' ), 'promo' ),
+			array( 'promo_text', 'textarea', __( 'Description', 'unmute' ), 'promo' ),
+			array( 'promo_cta', 'text', __( 'Link label', 'unmute' ), 'promo' ),
+			array( 'promo_url', 'url', __( 'Link (empty = last product category, or shop)', 'unmute' ), 'promo' ),
+			array( 'promo_image', 'image', __( 'Card artwork', 'unmute' ), 'promo' ),
 
 			// --- Collections --------------------------------------------------
 			array( 'collections_show', 'checkbox', __( 'Show collections (product categories)', 'unmute' ), 'collections' ),
@@ -84,19 +95,21 @@ if ( ! function_exists( 'unmute_customizer_schema' ) ) {
 			array( 'story_url', 'url', __( 'Button link (empty = About page if set)', 'unmute' ), 'story' ),
 
 			// --- Newsletter ------------------------------------------------------
-			array( 'news_show', 'checkbox', __( 'Show newsletter section', 'unmute' ), 'news' ),
+			array( 'news_show', 'checkbox', __( 'Show SIGNAL section', 'unmute' ), 'news' ),
 			array( 'news_title', 'text', __( 'Heading', 'unmute' ), 'news', array( 'transport' => 'postMessage' ) ),
 			array( 'news_text', 'textarea', __( 'Description', 'unmute' ), 'news' ),
 			array( 'news_action', 'url', __( 'External form action URL (Mailchimp, Klaviyo…). Empty = save subscribers locally', 'unmute' ), 'news' ),
 			array( 'news_note', 'text', __( 'Privacy microcopy', 'unmute' ), 'news' ),
 
 			// --- Colours -----------------------------------------------------------
-			array( 'color_bg', 'color', __( 'Page background', 'unmute' ), 'colors', array( 'transport' => 'postMessage' ) ),
+			array( 'color_bg', 'color', __( 'Page background (midnight)', 'unmute' ), 'colors', array( 'transport' => 'postMessage' ) ),
+			array( 'color_bg2', 'color', __( 'Midnight (deep surfaces)', 'unmute' ), 'colors', array( 'transport' => 'postMessage' ) ),
 			array( 'color_surface', 'color', __( 'Surface (cards, header)', 'unmute' ), 'colors', array( 'transport' => 'postMessage' ) ),
 			array( 'color_surface2', 'color', __( 'Surface 2 (bands, inputs)', 'unmute' ), 'colors', array( 'transport' => 'postMessage' ) ),
-			array( 'color_accent', 'color', __( 'Accent (lavender)', 'unmute' ), 'colors', array( 'transport' => 'postMessage' ) ),
-			array( 'color_accent2', 'color', __( 'Accent deep (glows, gradients)', 'unmute' ), 'colors', array( 'transport' => 'postMessage' ) ),
-			array( 'color_text', 'color', __( 'Body text', 'unmute' ), 'colors', array( 'transport' => 'postMessage' ) ),
+			array( 'color_accent', 'color', __( 'Aurora violet', 'unmute' ), 'colors', array( 'transport' => 'postMessage' ) ),
+			array( 'color_accent2', 'color', __( 'Aurora teal', 'unmute' ), 'colors', array( 'transport' => 'postMessage' ) ),
+			array( 'color_accent3', 'color', __( 'Nebula pink', 'unmute' ), 'colors', array( 'transport' => 'postMessage' ) ),
+			array( 'color_text', 'color', __( 'Body text (cloud white)', 'unmute' ), 'colors', array( 'transport' => 'postMessage' ) ),
 			array( 'color_muted', 'color', __( 'Muted text', 'unmute' ), 'colors', array( 'transport' => 'postMessage' ) ),
 			array(
 				'font_display',
@@ -105,9 +118,10 @@ if ( ! function_exists( 'unmute_customizer_schema' ) ) {
 				'colors',
 				array(
 					'choices' => array(
-						'marker' => __( 'Permanent Marker (default)', 'unmute' ),
-						'brush'  => __( 'Caveat Brush', 'unmute' ),
-						'salt'   => __( 'Rock Salt', 'unmute' ),
+						'marker'  => __( 'Permanent Marker (default)', 'unmute' ),
+						'grotesk' => __( 'Bricolage Grotesque (editorial)', 'unmute' ),
+						'brush'   => __( 'Caveat Brush', 'unmute' ),
+						'salt'    => __( 'Rock Salt', 'unmute' ),
 					),
 				)
 			),
@@ -138,7 +152,7 @@ if ( ! function_exists( 'unmute_customizer_schema' ) ) {
 
 if ( ! function_exists( 'unmute_icon_choices' ) ) {
 	/**
-	 * Icon choices for feature controls.
+	 * Icon choices for benefit controls.
 	 *
 	 * @return array
 	 */
@@ -146,11 +160,14 @@ if ( ! function_exists( 'unmute_icon_choices' ) ) {
 		return array(
 			'diamond' => __( 'Diamond (quality)', 'unmute' ),
 			'truck'   => __( 'Truck (shipping)', 'unmute' ),
+			'globe'   => __( 'Globe (worldwide)', 'unmute' ),
 			'shield'  => __( 'Shield (secure)', 'unmute' ),
 			'headset' => __( 'Headset (support)', 'unmute' ),
 			'heart'   => __( 'Heart', 'unmute' ),
 			'moon'    => __( 'Moon', 'unmute' ),
 			'crown'   => __( 'Crown', 'unmute' ),
+			'palette' => __( 'Palette (artist)', 'unmute' ),
+			'sparkle' => __( 'Sparkle (aurora)', 'unmute' ),
 		);
 	}
 }
@@ -187,6 +204,18 @@ if ( ! function_exists( 'unmute_sanitize_number' ) ) {
 	}
 }
 
+if ( ! function_exists( 'unmute_sanitize_checkbox' ) ) {
+	/**
+	 * Checkbox sanitizer.
+	 *
+	 * @param mixed $value Value.
+	 * @return int
+	 */
+	function unmute_sanitize_checkbox( $value ) {
+		return ( $value ) ? 1 : 0;
+	}
+}
+
 if ( ! function_exists( 'unmute_register_customizer' ) ) {
 	/**
 	 * Register panel, sections, settings & controls.
@@ -207,12 +236,13 @@ if ( ! function_exists( 'unmute_register_customizer' ) ) {
 		$sections = array(
 			'bar'         => __( 'Announcement bar', 'unmute' ),
 			'hero'        => __( 'Hero', 'unmute' ),
-			'features'    => __( 'Features strip', 'unmute' ),
+			'features'    => __( 'Benefits strip', 'unmute' ),
 			'featured'    => __( 'Featured products', 'unmute' ),
+			'promo'       => __( 'Featured collection card', 'unmute' ),
 			'collections' => __( 'Collections', 'unmute' ),
 			'story'       => __( 'Brand story', 'unmute' ),
-			'news'        => __( 'Newsletter', 'unmute' ),
-			'colors'      => __( 'Brand colours & type', 'unmute' ),
+			'news'        => __( 'SIGNAL newsletter', 'unmute' ),
+			'colors'      => __( 'Aurora colours & type', 'unmute' ),
 			'shop'        => __( 'Shop behaviour', 'unmute' ),
 			'footer'      => __( 'Footer, contact & social', 'unmute' ),
 		);
@@ -222,8 +252,8 @@ if ( ! function_exists( 'unmute_register_customizer' ) ) {
 			$wp_customize->add_section(
 				'unmute_' . $id,
 				array(
-					'title' => $title,
-					'panel' => 'unmute_panel',
+					'title'    => $title,
+					'panel'    => 'unmute_panel',
 					'priority' => $priority,
 				)
 			);
@@ -249,6 +279,8 @@ if ( ! function_exists( 'unmute_register_customizer' ) ) {
 					$setting_args['sanitize_callback'] = 'sanitize_hex_color';
 					break;
 				case 'url':
+					$setting_args['sanitize_callback'] = 'esc_url_raw';
+					break;
 				case 'image':
 					$setting_args['sanitize_callback'] = 'esc_url_raw';
 					break;
@@ -274,7 +306,10 @@ if ( ! function_exists( 'unmute_register_customizer' ) ) {
 
 			switch ( $type ) {
 				case 'checkbox':
-					$wp_customize->add_control( 'unmute_' . $key, $control_args );
+					$wp_customize->add_control(
+						'unmute_' . $key,
+						array_merge( $control_args, array( 'type' => 'checkbox' ) )
+					);
 					break;
 				case 'color':
 					$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'unmute_' . $key, $control_args ) );
@@ -294,7 +329,7 @@ if ( ! function_exists( 'unmute_register_customizer' ) ) {
 						array_merge(
 							$control_args,
 							array(
-								'type'  => 'number',
+								'type'        => 'number',
 								'input_attrs' => array(
 									'min'  => isset( $extra['min'] ) ? $extra['min'] : 0,
 									'max'  => isset( $extra['max'] ) ? $extra['max'] : 100,
@@ -311,15 +346,3 @@ if ( ! function_exists( 'unmute_register_customizer' ) ) {
 	}
 }
 add_action( 'customize_register', 'unmute_register_customizer' );
-
-if ( ! function_exists( 'unmute_sanitize_checkbox' ) ) {
-	/**
-	 * Checkbox sanitizer.
-	 *
-	 * @param mixed $value Value.
-	 * @return int
-	 */
-	function unmute_sanitize_checkbox( $value ) {
-		return ( $value ) ? 1 : 0;
-	}
-}

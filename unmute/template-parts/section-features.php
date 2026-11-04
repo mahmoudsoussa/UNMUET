@@ -1,6 +1,6 @@
 <?php
 /**
- * UNMUTE — features strip.
+ * UNMUTE — benefits strip.
  *
  * @package UNMUTE
  */

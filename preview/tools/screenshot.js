@@ -18,12 +18,12 @@ const BASE = 'http://127.0.0.1:8080/preview/';
     defaultViewport: { width: 1440, height: 900 },
   });
 
-  const shots = [
-    { url: BASE + 'index.html',   out: '../shots/home-desktop.jpg',   width: 1440, full: true  },
-    { url: BASE + 'index.html',   out: '../shots/home-mobile.jpg',    width: 390,  full: true  },
-    { url: BASE + 'shop.html',    out: '../shots/shop-desktop.jpg',   width: 1440, full: true  },
-    { url: BASE + 'product.html', out: '../shots/product-desktop.jpg', width: 1440, full: true },
-  ];
+  const pages = ['index', 'shop', 'product', 'cart', 'checkout', 'account', '404'];
+  const shots = [];
+  for (const name of pages) {
+    shots.push({ url: BASE + name + '.html', out: `../shots/${name === 'index' ? 'home' : name}-desktop.jpg`, width: 1440, full: true });
+    shots.push({ url: BASE + name + '.html', out: `../shots/${name === 'index' ? 'home' : name}-mobile.jpg`, width: 390, full: true });
+  }
 
   for (const s of shots) {
     const page = await browser.newPage();

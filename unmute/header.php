@@ -13,12 +13,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#0F1226">
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<a class="skip-link screen-reader-text" href="#unmute-main"><?php esc_html_e( 'Skip to content', 'unmute' ); ?></a>
+<a class="skip-link screen-reader-text" href="#unmute-main"><?php esc_html_e( 'انتقل إلى المحتوى', 'unmute' ); ?></a>
 
 <?php if ( unmute_option( 'bar_show' ) && unmute_option( 'bar_text' ) ) : ?>
 	<div class="unmute-bar">
@@ -40,7 +41,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php endif; ?>
 		</a>
 
-		<nav class="unmute-header__nav" aria-label="<?php esc_attr_e( 'Primary', 'unmute' ); ?>">
+		<nav class="unmute-header__nav" aria-label="<?php esc_attr_e( 'القائمة الرئيسية', 'unmute' ); ?>">
 			<?php
 			wp_nav_menu(
 				array(
@@ -55,27 +56,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</nav>
 
 		<div class="unmute-header__actions">
-			<button class="unmute-iconbtn" type="button" data-unmute-search-toggle aria-expanded="false" aria-controls="unmute-search-panel">
+			<button class="unmute-iconbtn unmute-iconbtn--search" type="button" data-unmute-search-toggle aria-expanded="false" aria-controls="unmute-search-panel">
 				<?php echo unmute_icon( 'search' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotSanitized ?>
-				<span class="screen-reader-text"><?php esc_html_e( 'Search', 'unmute' ); ?></span>
+				<span class="unmute-iconbtn__label"><?php esc_html_e( 'ابحث عن تصميم…', 'unmute' ); ?></span>
+				<span class="screen-reader-text"><?php esc_html_e( 'البحث', 'unmute' ); ?></span>
 			</button>
 
 			<a class="unmute-iconbtn" href="<?php echo esc_url( function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'myaccount' ) : wp_login_url() ); ?>">
 				<?php echo unmute_icon( 'user' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotSanitized ?>
-				<span class="screen-reader-text"><?php esc_html_e( 'Account', 'unmute' ); ?></span>
+				<span class="screen-reader-text"><?php esc_html_e( 'حسابي', 'unmute' ); ?></span>
 			</a>
 
 			<?php if ( class_exists( 'WooCommerce' ) ) : ?>
 				<a class="unmute-iconbtn unmute-iconbtn--cart" href="<?php echo esc_url( wc_get_page_permalink( 'cart' ) ); ?>">
 					<?php echo unmute_icon( 'bag' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotSanitized ?>
-					<span class="unmute-cart-count"><?php echo esc_html( WC()->cart ? WC()->cart->get_cart_contents_count() : 0 ); ?></span>
-					<span class="screen-reader-text"><?php esc_html_e( 'Cart', 'unmute' ); ?></span>
+					<span class="unmute-cart-count"><?php echo esc_html( WC()->cart ? (string) WC()->cart->get_cart_contents_count() : '0' ); ?></span>
+					<span class="screen-reader-text"><?php esc_html_e( 'حقيبة التسوق', 'unmute' ); ?></span>
 				</a>
 			<?php endif; ?>
 
 			<button class="unmute-iconbtn unmute-menu-toggle" type="button" data-unmute-menu-toggle aria-expanded="false" aria-controls="unmute-drawer">
 				<?php echo unmute_icon( 'menu' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotSanitized ?>
-				<span class="screen-reader-text"><?php esc_html_e( 'Menu', 'unmute' ); ?></span>
+				<span class="screen-reader-text"><?php esc_html_e( 'القائمة', 'unmute' ); ?></span>
 			</button>
 		</div>
 	</div>
@@ -87,15 +89,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 </header>
 
-<div class="unmute-drawer" id="unmute-drawer" hidden>
+<div class="unmute-drawer" id="unmute-drawer" role="dialog" aria-modal="true" aria-label="<?php esc_attr_e( 'قائمة التنقّل', 'unmute' ); ?>" hidden>
 	<div class="unmute-drawer__head">
 		<span class="unmute-drawer__title"><?php bloginfo( 'name' ); ?></span>
 		<button class="unmute-iconbtn" type="button" data-unmute-menu-toggle aria-expanded="false" aria-controls="unmute-drawer">
 			<?php echo unmute_icon( 'close' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotSanitized ?>
-			<span class="screen-reader-text"><?php esc_html_e( 'Close menu', 'unmute' ); ?></span>
+			<span class="screen-reader-text"><?php esc_html_e( 'إغلاق القائمة', 'unmute' ); ?></span>
 		</button>
 	</div>
-	<nav aria-label="<?php esc_attr_e( 'Mobile', 'unmute' ); ?>">
+	<nav aria-label="<?php esc_attr_e( 'قائمة الجوال', 'unmute' ); ?>">
 		<?php
 		wp_nav_menu(
 			array(
@@ -109,7 +111,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</nav>
 	<div class="unmute-drawer__foot">
 		<?php if ( class_exists( 'WooCommerce' ) ) : ?>
-			<a class="unmute-btn unmute-btn--primary" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"><?php esc_html_e( 'Shop Now', 'unmute' ); ?></a>
+			<a class="unmute-btn unmute-btn--primary" href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"><?php esc_html_e( 'تسوّق الآن', 'unmute' ); ?></a>
 		<?php endif; ?>
 		<?php unmute_social_links(); ?>
 	</div>

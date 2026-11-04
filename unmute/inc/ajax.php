@@ -18,13 +18,13 @@ if ( ! function_exists( 'unmute_handle_subscribe' ) ) {
 
 		// Honeypot: bots fill hidden fields.
 		if ( ! empty( $_POST['unmute_hp'] ) ) {
-			wp_send_json_success( array( 'message' => __( 'Thanks — you are on the list.', 'unmute' ) ) );
+			wp_send_json_success( array( 'message' => __( 'تم — أنت على القائمة.', 'unmute' ) ) );
 		}
 
 		$email = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
 
 		if ( ! is_email( $email ) ) {
-			wp_send_json_error( array( 'message' => __( 'Please enter a valid email address.', 'unmute' ) ), 400 );
+			wp_send_json_error( array( 'message' => __( 'أدخل بريدًا إلكترونيًا صحيحًا.', 'unmute' ) ), 400 );
 		}
 
 		$list = get_option( 'unmute_subscribers', array() );
@@ -59,7 +59,7 @@ if ( ! function_exists( 'unmute_handle_subscribe' ) ) {
 		 */
 		do_action( 'unmute_newsletter_subscribed', $email );
 
-		wp_send_json_success( array( 'message' => __( 'Welcome to the Signal. Watch your inbox for the next drop.', 'unmute' ) ) );
+		wp_send_json_success( array( 'message' => __( 'أهلًا بك في SIGNAL. انتظر الإصدار القادم في بريدك.', 'unmute' ) ) );
 	}
 }
 add_action( 'wp_ajax_unmute_subscribe', 'unmute_handle_subscribe' );

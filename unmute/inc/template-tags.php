@@ -19,69 +19,82 @@ if ( ! function_exists( 'unmute_defaults' ) ) {
 		return array(
 			// Announcement bar.
 			'bar_show'            => 1,
-			'bar_text'            => __( 'Every piece is printed to order — please allow 3–6 production days before shipping.', 'unmute' ),
+			'bar_text'            => __( 'كل قطعة تُطبع حسب الطلب — ٣–٦ أيام إنتاج قبل الشحن. شحن مجاني فوق 95$.', 'unmute' ),
 
 			// Hero.
 			'hero_show'           => 1,
 			'hero_image'          => '',
-			'hero_eyebrow'        => __( 'UNMUTE — art-driven darkwear', 'unmute' ),
+			'hero_eyebrow'        => __( 'UNMUTE — EXPRESS WITHOUT LIMITS', 'unmute' ),
 			'hero_title'          => __( 'Wear What You Feel.', 'unmute' ),
 			'hero_accent'         => __( 'Feel.', 'unmute' ),
-			'hero_text'           => __( "Original artwork for the feelings you can't say out loud. Drawn in-house, printed when you order it, made to be worn for years.", 'unmute' ),
-			'hero_cta'            => __( 'Shop Now', 'unmute' ),
+			'hero_sub'            => __( 'ارتدِ ما تعبّر به عن نفسك.', 'unmute' ),
+			'hero_text'           => __( 'أزياء لفنّانين لا يطلبون إذنًا. رُسوم أصلية، ألوان شفق متدفّقة، وقطع تُصنع حين تطلبها — بلا حدود، وبلا كود لباس.', 'unmute' ),
+			'hero_cta'            => __( 'تسوّق الآن', 'unmute' ),
 			'hero_url'            => '',
-			'hero_cta2'           => __( 'Explore Collections', 'unmute' ),
+			'hero_cta2'           => __( 'استكشف المجموعات', 'unmute' ),
 			'hero_url2'           => '',
 
-			// Features.
+			// Benefits strip.
 			'features_show'       => 1,
 			'f1_icon'             => 'diamond',
-			'f1_title'            => __( 'Considered Materials', 'unmute' ),
-			'f1_text'             => __( 'Heavyweight blanks chosen for structure, drape and hand-feel.', 'unmute' ),
-			'f2_icon'             => 'truck',
-			'f2_title'            => __( 'Ships Worldwide', 'unmute' ),
-			'f2_text'             => __( 'Tracked delivery to the US, Europe and beyond.', 'unmute' ),
-			'f3_icon'             => 'shield',
-			'f3_title'            => __( 'Secure Checkout', 'unmute' ),
-			'f3_text'             => __( 'Encrypted payments through trusted gateways.', 'unmute' ),
+			'f1_title'            => __( 'جودة مضمونة', 'unmute' ),
+			'f1_text'             => __( 'أقمشة ثقيلة، تفاصيل منجزة يدويًا.', 'unmute' ),
+			'f2_icon'             => 'shield',
+			'f2_title'            => __( 'دفع آمن', 'unmute' ),
+			'f2_text'             => __( 'بوابات دفع مشفّرة موثوقة.', 'unmute' ),
+			'f3_icon'             => 'globe',
+			'f3_title'            => __( 'شحن عالمي', 'unmute' ),
+			'f3_text'             => __( 'تتبّع كامل لأكثر من 40 دولة.', 'unmute' ),
 			'f4_icon'             => 'headset',
-			'f4_title'            => __( 'Human Support', 'unmute' ),
-			'f4_text'             => __( 'Real replies from the studio — usually within 24 hours.', 'unmute' ),
+			'f4_title'            => __( 'دعم سريع', 'unmute' ),
+			'f4_text'             => __( 'ردّ بشري خلال ٢٤ ساعة.', 'unmute' ),
 
 			// Featured products.
 			'featured_show'       => 1,
-			'featured_title'      => __( 'Featured Pieces', 'unmute' ),
+			'featured_title'      => __( 'أعمالنا المميزة', 'unmute' ),
 			'featured_source'     => 'featured',
-			'featured_count'      => 8,
+			'featured_count'      => 5,
+
+			// Featured collection card ("THE AURORA").
+			'promo_show'          => 1,
+			'promo_tag'           => __( 'مجموعة محدودة', 'unmute' ),
+			'promo_kicker'        => __( 'مجموعة', 'unmute' ),
+			'promo_title'         => __( 'THE AURORA', 'unmute' ),
+			'promo_text'          => __( 'قطع مستوحاة من الشفق القطبي: تدرّجات بنفسجية وفيروزية تتغيّر مع الحركة.', 'unmute' ),
+			'promo_cta'           => __( 'اكتشف المجموعة', 'unmute' ),
+			'promo_url'           => '',
+			'promo_image'         => '',
 
 			// Collections.
 			'collections_show'    => 1,
-			'collections_title'   => __( 'Art Collections', 'unmute' ),
+			'collections_title'   => __( 'مجموعاتنا الفنية', 'unmute' ),
 			'collections_count'   => 6,
 
 			// Story.
 			'story_show'          => 1,
 			'story_image'         => '',
-			'story_quote'         => __( 'Your feelings deserve a voice. Wear them.', 'unmute' ),
-			'story_text'          => __( 'UNMUTE began with a simple belief: silence is not emptiness. Every piece starts as an original drawing — a character, a mood, a confession — then moves onto heavyweight cotton in limited, numbered runs. No borrowed characters. No mass stock. Just art that says the part of you that stays quiet.', 'unmute' ),
-			'story_cta'           => __( 'Our Story', 'unmute' ),
+			'story_quote'         => __( 'عقلك لا يعرف زيًّا رسميًا.', 'unmute' ),
+			'story_text'          => __( 'بدأت UNMUTE من فكرة واحدة: الصمت ليس فراغًا. كل قطعة تبدأ رسمًا أصليًا — شخصية، حالة، اعتراف — ثم تنتقل إلى قطن ثقيل بإصدارات مرقّمة ومحدودة. لا شخصيات مستعارة، ولا مخزون ضخم. فقط فنّ يقول الجزء الذي يبقى صامتًا فيك.', 'unmute' ),
+			'story_cta'           => __( 'قصّتنا', 'unmute' ),
 			'story_url'           => '',
 
 			// Newsletter.
 			'news_show'           => 1,
-			'news_title'          => __( 'Join the Signal', 'unmute' ),
-			'news_text'           => __( 'First access to new drops, archive sales and studio notes. No noise, ever.', 'unmute' ),
+			'news_title'          => __( 'ابقَ على تواصل معنا', 'unmute' ),
+			'news_text'           => __( 'كن أول من يعرف عن التصاميم الجديدة والعروض الخاصة. رسالة واحدة كل أسبوعين، بلا ضجيج.', 'unmute' ),
 			'news_action'         => '',
-			'news_note'           => __( 'By subscribing you agree to our privacy policy. Unsubscribe anytime.', 'unmute' ),
+			'news_note'           => __( 'بالاشتراك أنت توافق على سياسة الخصوصية. يمكنك إلغاء الاشتراك في أي وقت.', 'unmute' ),
 
-			// Colours.
-			'color_bg'            => '#0B0A0E',
-			'color_surface'       => '#141218',
-			'color_surface2'      => '#1B1824',
-			'color_accent'        => '#B7A4F0',
-			'color_accent2'       => '#8B6FE8',
-			'color_text'          => '#F2EEF8',
-			'color_muted'         => '#A9A1BA',
+			// Colours — Aurora identity.
+			'color_bg'            => '#0F1226',
+			'color_bg2'           => '#171B35',
+			'color_surface'       => '#1A1F3D',
+			'color_surface2'      => '#232A4D',
+			'color_accent'        => '#7956B9',
+			'color_accent2'       => '#37BDB0',
+			'color_accent3'       => '#C47BCB',
+			'color_text'          => '#E8E8F0',
+			'color_muted'         => '#9BA2C7',
 
 			// Typography.
 			'font_display'        => 'marker',
@@ -91,14 +104,14 @@ if ( ! function_exists( 'unmute_defaults' ) ) {
 			'shop_per_page'       => 12,
 			'shop_new_days'       => 30,
 			'shop_best_threshold' => 3,
-			'single_shipping'     => __( 'Made to order: each piece is printed after you order (3–6 production days), then shipped with tracking. US 5–9 business days · Europe 4–8 business days.', 'unmute' ),
-			'single_returns'      => __( 'Misprint or defect? Free replacement within 30 days. Wrong size? One-time size exchange at 50% off. Full details on the Returns page.', 'unmute' ),
+			'single_shipping'     => __( 'تُصنع حسب الطلب: كل قطعة تُطبع بعد طلبك (٣–٦ أيام إنتاج)، ثم تُشحن مع تتبّع. أمريكا ٥–٩ أيام عمل · أوروبا ٤–٨ أيام عمل.', 'unmute' ),
+			'single_returns'      => __( 'خطأ في الطباعة أو عيب؟ استبدال مجاني خلال 30 يومًا. مقاس غير مناسب؟ تبديل لمرة واحدة بخصم 50%. التفاصيل الكاملة في صفحة الإرجاع.', 'unmute' ),
 
 			// Footer.
 			'footer_email'        => '',
 			'footer_phone'        => '',
 			'footer_address'      => '',
-			'footer_blurb'        => __( "Art-driven darkwear for the feelings you can't say out loud. Original characters, limited runs, heavyweight cotton.", 'unmute' ),
+			'footer_blurb'        => __( 'أزياء فنية لمن لا يطلبون إذنًا في التعبير. رسوم أصلية، إصدارات محدودة، قطن ثقيل — وألوان شفق لا تُقلَّد.', 'unmute' ),
 			'footer_copyright'    => '',
 			'social_instagram'    => '',
 			'social_tiktok'       => '',
@@ -124,6 +137,23 @@ if ( ! function_exists( 'unmute_option' ) ) {
 	}
 }
 
+if ( ! function_exists( 'unmute_sanitize_hex' ) ) {
+	/**
+	 * Strict hex-colour sanitizer, with a safe fallback for empty values.
+	 *
+	 * @param string $value Raw value.
+	 * @return string
+	 */
+	function unmute_sanitize_hex( $value ) {
+		$value = is_string( $value ) ? trim( $value ) : '';
+		if ( '' === $value ) {
+			return '';
+		}
+		$hex = sanitize_hex_color( $value );
+		return $hex ? $hex : '';
+	}
+}
+
 if ( ! function_exists( 'unmute_icon' ) ) {
 	/**
 	 * Inline SVG icon set (stroke = currentColor).
@@ -141,13 +171,17 @@ if ( ! function_exists( 'unmute_icon' ) ) {
 			'menu'      => '<path d="M4 7h16M4 12h16M4 17h10"/>',
 			'close'     => '<path d="m6 6 12 12M18 6 6 18"/>',
 			'arrow'     => '<path d="M5 12h14m-6-6 6 6-6 6"/>',
+			'arrow-up'  => '<path d="M12 19V5m-6 6 6-6 6 6"/>',
 			'diamond'   => '<path d="M7 4h10l4 5-9 11L3 9l4-5Z"/><path d="M3 9h18"/>',
 			'truck'     => '<path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/>',
+			'globe'     => '<circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.4 3.6 5.3 3.6 8.5S14.4 18.1 12 20.5c-2.4-2.4-3.6-5.3-3.6-8.5S9.6 5.9 12 3.5Z"/>',
 			'shield'    => '<path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4"/>',
 			'headset'   => '<path d="M4 13a8 8 0 0 1 16 0"/><path d="M4 13v4a2 2 0 0 0 2 2h2v-6H6a2 2 0 0 0-2 2ZM20 13v4a2 2 0 0 1-2 2h-2v-6h2a2 2 0 0 1 2 2Z"/>',
 			'send'      => '<path d="m4 12 16-8-6 16-2.5-6.5L4 12Z"/>',
 			'crown'     => '<path d="m4 17 1-9 4.5 4L12 6l2.5 6L19 8l1 9H4Z"/>',
 			'moon'      => '<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/>',
+			'palette'   => '<path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-1 2-2s-.7-1.6-.7-2.4c0-1 .8-1.6 1.9-1.6H18a3 3 0 0 0 3-3A9 9 0 0 0 12 3Z"/><circle cx="8" cy="10" r="1"/><circle cx="12" cy="7.6" r="1"/><circle cx="16" cy="10" r="1"/>',
+			'sparkle'   => '<path d="M12 3c.8 4.3 2.7 6.2 7 7-4.3.8-6.2 2.7-7 7-.8-4.3-2.7-6.2-7-7 4.3-.8 6.2-2.7 7-7Z"/>',
 			'instagram' => '<rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17" cy="7" r=".9" fill="currentColor" stroke="none"/>',
 			'tiktok'    => '<path d="M14 4v9.5a3.5 3.5 0 1 1-3-3.46"/><path d="M14 5.5c.8 2 2.4 3.2 4.5 3.4"/>',
 			'youtube'   => '<rect x="3" y="6" width="18" height="12" rx="3.5"/><path d="m10.5 9.5 5 2.5-5 2.5v-5Z"/>',
@@ -172,6 +206,17 @@ if ( ! function_exists( 'unmute_sparkle' ) ) {
 	 */
 	function unmute_sparkle( $class = '' ) {
 		return '<svg class="unmute-sparkle ' . esc_attr( $class ) . '" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 1.5c1 6.2 3.3 8.5 9.5 9.5-6.2 1-8.5 3.3-9.5 9.5-1-6.2-3.3-8.5-9.5-9.5 6.2-1 8.5-3.3 9.5-9.5Z"/></svg>';
+	}
+}
+
+if ( ! function_exists( 'unmute_aurora' ) ) {
+	/**
+	 * Decorative aurora light room. Purely presentational.
+	 *
+	 * @param string $class Extra class.
+	 */
+	function unmute_aurora( $class = '' ) {
+		echo '<div class="unmute-aurora ' . esc_attr( $class ) . '" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>';
 	}
 }
 
@@ -200,6 +245,18 @@ if ( ! function_exists( 'unmute_section_head' ) ) {
 	}
 }
 
+if ( ! function_exists( 'unmute_multiline' ) ) {
+	/**
+	 * Render a Customizer textarea safely, keeping paragraphs and line breaks.
+	 *
+	 * @param string $text Raw value.
+	 * @return string
+	 */
+	function unmute_multiline( $text ) {
+		return wpautop( wp_kses_post( (string) $text ) );
+	}
+}
+
 if ( ! function_exists( 'unmute_product_badges' ) ) {
 	/**
 	 * New / Sale / Bestseller badges for a product.
@@ -214,7 +271,7 @@ if ( ! function_exists( 'unmute_product_badges' ) ) {
 		$created = $product->get_date_created();
 
 		if ( $days > 0 && $created && ( time() - $created->getTimestamp() ) < ( $days * DAY_IN_SECONDS ) ) {
-			$out[] = '<span class="unmute-badge unmute-badge--new">' . esc_html__( 'New', 'unmute' ) . '</span>';
+			$out[] = '<span class="unmute-badge unmute-badge--new">' . esc_html__( 'جديد', 'unmute' ) . '</span>';
 		}
 
 		if ( $product->is_on_sale() ) {
@@ -227,9 +284,13 @@ if ( ! function_exists( 'unmute_product_badges' ) ) {
 			$out[] = '<span class="unmute-badge unmute-badge--sale">' . esc_html( $label ) . '</span>';
 		}
 
-		$sales = (int) get_post_meta( $product->get_id(), 'total_sales', true );
+		$sales = (int) $product->get_total_sales();
 		if ( $best > 0 && $sales >= $best ) {
-			$out[] = '<span class="unmute-badge unmute-badge--best">' . esc_html__( 'Bestseller', 'unmute' ) . '</span>';
+			$out[] = '<span class="unmute-badge unmute-badge--best">' . esc_html__( 'الأكثر مبيعًا', 'unmute' ) . '</span>';
+		}
+
+		if ( ! $product->is_in_stock() ) {
+			$out[] = '<span class="unmute-badge unmute-badge--out">' . esc_html__( 'نُفد', 'unmute' ) . '</span>';
 		}
 
 		return implode( '', $out );
@@ -246,14 +307,6 @@ if ( ! function_exists( 'unmute_wishlist_control' ) ) {
 	 * @return string
 	 */
 	function unmute_wishlist_control( $product ) {
-		$shortcode = '';
-
-		if ( defined( 'YITH_WCWL' ) ) {
-			$shortcode = '[yith_wcwl_add_to_wishlist]';
-		} elseif ( defined( 'TINV_WCWL_VERSION' ) ) {
-			$shortcode = '[ti_wcwl_add_to_wishlist]';
-		}
-
 		/**
 		 * Allow wishlist plugins to inject their button markup into UNMUTE cards.
 		 *
@@ -261,10 +314,6 @@ if ( ! function_exists( 'unmute_wishlist_control' ) ) {
 		 * @param WC_Product $product Current product.
 		 */
 		$markup = apply_filters( 'unmute_wishlist_markup', '', $product );
-
-		if ( ! $markup && $shortcode ) {
-			$markup = do_shortcode( $shortcode );
-		}
 
 		if ( ! $markup ) {
 			return '';
@@ -274,39 +323,16 @@ if ( ! function_exists( 'unmute_wishlist_control' ) ) {
 	}
 }
 
-if ( ! function_exists( 'unmute_product_card' ) ) {
+if ( ! function_exists( 'unmute_product_card_inner' ) ) {
 	/**
-	 * The single source of truth for product-card markup. Used by the shop
-	 * loop (via hooks), the front-page featured section and search results.
+	 * The card markup itself (no wrapper). Used by the loop and by
+	 * `unmute_product_card()`; safe to call inside an existing <li>.
 	 *
-	 * @param WC_Product|null $product Product object (falls back to global).
-	 * @param string          $tag     Wrapper tag: `li` (grids inside ul) or `div`.
+	 * @param WC_Product $item Product.
 	 */
-	function unmute_product_card( $passed_product = null, $tag = 'li' ) {
-		global $product;
-
-		$item = $passed_product ? $passed_product : $product;
-
-		if ( ! $item || ! is_a( $item, 'WC_Product' ) ) {
-			return;
-		}
-
-		// woocommerce_template_loop_add_to_cart() reads the global product.
-		$previous_global = $product;
-		$product         = $item; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-
+	function unmute_product_card_inner( $item ) {
 		$permalink = get_permalink( $item->get_id() );
 		$rating    = $item->get_average_rating();
-
-		$tag = ( 'div' === $tag ) ? 'div' : 'li';
-
-		if ( 'li' === $tag ) {
-			echo '<li ';
-			wc_product_class( '', $item ); // Echoes the class attribute.
-			echo '>';
-		} else {
-			echo '<div class="product unmute-product">';
-		}
 		?>
 		<article class="unmute-card">
 			<?php
@@ -333,6 +359,44 @@ if ( ! function_exists( 'unmute_product_card' ) ) {
 			</div>
 		</article>
 		<?php
+	}
+}
+
+if ( ! function_exists( 'unmute_product_card' ) ) {
+	/**
+	 * Standalone product card (a complete <li>). Use this in grids the theme
+	 * builds itself (front page, search). Inside WooCommerce's own loop the
+	 * `woocommerce_before_shop_loop_item` hook renders only the inner markup,
+	 * so the loop wrapper is never duplicated.
+	 *
+	 * @param WC_Product|null $product Product object (falls back to global).
+	 * @param string          $tag     Wrapper tag: `li` (grids inside ul) or `div`.
+	 */
+	function unmute_product_card( $passed_product = null, $tag = 'li' ) {
+		global $product;
+
+		$item = $passed_product ? $passed_product : $product;
+
+		if ( ! $item || ! is_a( $item, 'WC_Product' ) ) {
+			return;
+		}
+
+		// woocommerce_template_loop_add_to_cart() reads the global product.
+		$previous_global = $product;
+		$product         = $item; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+
+		$tag = ( 'div' === $tag ) ? 'div' : 'li';
+
+		if ( 'li' === $tag ) {
+			echo '<li ';
+			wc_product_class( '', $item ); // Echoes the class attribute.
+			echo '>';
+		} else {
+			echo '<div class="product unmute-product">';
+		}
+
+		unmute_product_card_inner( $item );
+
 		echo '</' . $tag . '>';
 
 		$product = $previous_global; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
@@ -373,16 +437,16 @@ if ( ! function_exists( 'unmute_social_links' ) ) {
 
 if ( ! function_exists( 'unmute_fallback_menu' ) ) {
 	/**
-	 * Fallback primary menu (pages) when no menu is assigned.
+	 * Fallback primary menu when no menu is assigned.
 	 */
 	function unmute_fallback_menu() {
 		echo '<ul class="unmute-nav">';
-		echo '<li class="menu-item"><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'Home', 'unmute' ) . '</a></li>';
+		echo '<li class="menu-item"><a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html__( 'الرئيسية', 'unmute' ) . '</a></li>';
 		if ( class_exists( 'WooCommerce' ) ) {
-			echo '<li class="menu-item"><a href="' . esc_url( wc_get_page_permalink( 'shop' ) ) . '">' . esc_html__( 'Shop', 'unmute' ) . '</a></li>';
-			echo '<li class="menu-item"><a href="' . esc_url( home_url( '/#collections' ) ) . '">' . esc_html__( 'Collections', 'unmute' ) . '</a></li>';
+			echo '<li class="menu-item"><a href="' . esc_url( wc_get_page_permalink( 'shop' ) ) . '">' . esc_html__( 'المتجر', 'unmute' ) . '</a></li>';
+			echo '<li class="menu-item"><a href="' . esc_url( home_url( '/#collections' ) ) . '">' . esc_html__( 'المجموعات', 'unmute' ) . '</a></li>';
 		}
-		echo '<li class="menu-item"><a href="' . esc_url( home_url( '/?post_type=post' ) ) . '">' . esc_html__( 'Journal', 'unmute' ) . '</a></li>';
+		echo '<li class="menu-item"><a href="' . esc_url( home_url( '/?post_type=post' ) ) . '">' . esc_html__( 'المدونة', 'unmute' ) . '</a></li>';
 		echo '</ul>';
 	}
 }
@@ -404,11 +468,43 @@ if ( ! function_exists( 'unmute_post_card' ) ) {
 				<h2 class="post-card__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 				<p class="post-card__excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt(), 22 ) ); ?></p>
 				<a class="post-card__more" href="<?php the_permalink(); ?>">
-					<?php esc_html_e( 'Read', 'unmute' ); ?>
+					<?php esc_html_e( 'اقرأ', 'unmute' ); ?>
 					<?php echo unmute_icon( 'arrow', 'unmute-icon--flip-rtl' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotSanitized ?>
 				</a>
 			</div>
 		</article>
+		<?php
+	}
+}
+
+if ( ! function_exists( 'unmute_newsletter_form' ) ) {
+	/**
+	 * Shared newsletter form. Used by the SIGNAL band and the footer.
+	 *
+	 * @param string $variant 'band' or 'footer'.
+	 */
+	function unmute_newsletter_form( $variant = 'band' ) {
+		$action  = unmute_option( 'news_action' );
+		$is_foot = ( 'footer' === $variant );
+		$field   = 'unmute-news-email-' . $variant;
+		$classes = $is_foot ? 'unmute-footer__form' : 'newsletter__form';
+		$note    = $is_foot ? 'unmute-footer__note' : 'newsletter__note';
+		?>
+		<form class="<?php echo esc_attr( $classes ); ?>" method="post" action="<?php echo $action ? esc_url( $action ) : '#'; ?>" data-unmute-newsform="<?php echo $action ? 'external' : 'local'; ?>">
+			<?php if ( ! $action ) : ?>
+				<?php wp_nonce_field( 'unmute_newsletter', 'unmute_nonce' ); ?>
+				<input type="text" name="unmute_hp" class="unmute-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+			<?php endif; ?>
+			<label class="screen-reader-text" for="<?php echo esc_attr( $field ); ?>"><?php esc_html_e( 'البريد الإلكتروني', 'unmute' ); ?></label>
+			<input id="<?php echo esc_attr( $field ); ?>" type="email" name="email" placeholder="<?php esc_attr_e( 'أدخل بريدك الإلكتروني', 'unmute' ); ?>" required>
+			<button class="unmute-btn unmute-btn--primary" type="submit">
+				<?php echo unmute_icon( 'send', 'unmute-icon--flip-rtl' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotSanitized ?>
+				<span><?php esc_html_e( 'اشترك', 'unmute' ); ?></span>
+			</button>
+		</form>
+		<?php if ( ! $is_foot && unmute_option( 'news_note' ) ) : ?>
+			<p class="<?php echo esc_attr( $note ); ?>" role="status" aria-live="polite"><?php echo esc_html( unmute_option( 'news_note' ) ); ?></p>
+		<?php endif; ?>
 		<?php
 	}
 }

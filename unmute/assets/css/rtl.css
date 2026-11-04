@@ -1,62 +1,128 @@
 /* ==========================================================================
-   UNMUTE — RTL adjustments (loaded automatically when the site is RTL)
-   Most of the layout uses logical properties; this file flips the rest.
+   UNMUTE — RTL refinements (auto-loaded when the site language is RTL).
+   Most of the layout uses logical properties, so most of the theme flips on
+   its own. This file covers the cases CSS cannot infer, plus Arabic-specific
+   typography rhythm.
    ========================================================================== */
 
+/* Directional icons */
 .unmute-icon--flip-rtl {
 	transform: scaleX(-1);
 }
 
+/* Hero: the Arabic type sits on the inline-end (right) side. The artwork is
+   composed with the model on the right, so the plate is mirrored to move her
+   to the inline-start (left) and keep the copy over the open aurora field. */
 .hero__media img {
-	object-position: 28% 30%;
+	object-position: center 32%;
+	transform: scale(-1.02, 1.02);
+}
+
+/* Portrait crop: the copy no longer overlaps the artwork, so the mirror is
+   unnecessary — framing the original plate keeps the model centred instead of
+   slicing her against the edge. */
+@media (max-width: 899px) {
+	.hero__media img {
+		transform: scale(1.02);
+		object-position: 100% 12%;
+	}
 }
 
 .hero__media::after {
 	background:
-		linear-gradient(to top, var(--unmute-bg) 2%, transparent 42%),
-		linear-gradient(to left, var(--unmute-bg) 8%, color-mix(in srgb, var(--unmute-bg) 55%, transparent) 46%, transparent 78%);
+		linear-gradient(to top, rgba(15, 18, 38, 0.96) 0%, rgba(15, 18, 38, 0.55) 34%, transparent 68%),
+		linear-gradient(to left, rgba(15, 18, 38, 0.97) 6%, rgba(15, 18, 38, 0.82) 34%, rgba(15, 18, 38, 0.25) 62%, transparent 84%);
 }
 
 .hero__inner {
 	margin-inline-start: auto;
 	margin-inline-end: 0;
-	text-align: right;
 }
 
-.hero__text {
-	margin-inline: auto 0;
+.hero__text,
+.hero__sub {
+	margin-inline: 0 auto;
 }
 
 .sec-head__rule {
-	background: linear-gradient(to left, var(--unmute-line-strong), transparent);
+	background: linear-gradient(to left, transparent, rgba(232, 232, 240, 0.18) 18%, rgba(121, 86, 185, 0.5) 50%, rgba(232, 232, 240, 0.18) 82%, transparent);
 }
 
-.col-card:hover .col-card__arrow {
-	transform: translateX(-4px);
+/* Arabic letterforms should not be forced into uppercase tracking. */
+.unmute-brand__name,
+.unmute-eyebrow,
+.unmute-badge,
+.hero__eyebrow,
+.post-card__date,
+.post-single__date,
+.col-card__count,
+.aurora-card__kicker,
+.aurora-card__tag,
+.unmute-footer__title,
+.unmute-footer__social-title,
+.unmute-product-info__item h3 {
+	text-transform: none;
+	letter-spacing: 0.02em;
 }
 
 .unmute-brand__name {
-	letter-spacing: 0.3em;
+	font-family: 'Cairo', 'Manrope', system-ui, sans-serif;
+	letter-spacing: 0.18em;
+	transform: none;
 }
 
-select {
-	background-position: calc(0% + 20px) 55%, calc(0% + 14px) 55%;
-}
-
-.unmute-searchform input[type="search"] {
-	padding-inline-start: 16px;
-	padding-inline-end: 42px;
-}
-
-.unmute-searchform .unmute-searchform__icon {
-	inset-inline-start: auto;
-	inset-inline-end: 14px;
-}
-
-.entry-content blockquote {
-	padding: 6px 22px 6px 0;
-}
-
-.unmute-nav .sub-menu {
+/* Hero headline: right-aligned, but Latin brush type keeps a tight leading. */
+.hero__title {
+	line-height: 1.04;
 	text-align: right;
+}
+
+/* Arabic display rhythm: larger line-height, no negative tracking. */
+
+h1,
+h2,
+h3,
+.sec-head__title,
+.page-head__title,
+.product_title,
+.aurora-card__title,
+.story__quote {
+	letter-spacing: 0;
+}
+
+.story__quote,
+.aurora-card__title em {
+	font-family: 'Cairo', 'Manrope', system-ui, sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+
+/* Select chevrons */
+select {
+	background-position: left 14px center;
+}
+
+.unmute-searchform input[type='search'] {
+	padding-inline-start: 46px;
+	padding-inline-end: 16px;
+}
+
+/* Drawer slide direction */
+@keyframes unmute-drawer-in-rtl {
+	from { transform: translateX(-24px); opacity: 0.4; }
+	to { transform: none; opacity: 1; }
+}
+
+.unmute-drawer {
+	animation-name: unmute-drawer-in-rtl;
+}
+
+/* Arrow nudge mirrors */
+.col-card:hover .col-card__arrow,
+.sec-head__link:hover .unmute-icon {
+	transform: translateX(-4px);
+}
+
+body {
+	font-family: 'Cairo', 'Manrope', system-ui, sans-serif;
 }

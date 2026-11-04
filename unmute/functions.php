@@ -2,6 +2,8 @@
 /**
  * UNMUTE theme — functions & definitions.
  *
+ * EXPRESS WITHOUT LIMITS.
+ *
  * @package UNMUTE
  */
 
@@ -9,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // No direct access.
 }
 
-define( 'UNMUTE_VERSION', '1.0.0' );
+define( 'UNMUTE_VERSION', '2.0.0' );
 
 require get_theme_file_path( 'inc/template-tags.php' );
 require get_theme_file_path( 'inc/customizer.php' );
@@ -34,7 +36,7 @@ if ( ! function_exists( 'unmute_setup' ) ) {
 			'custom-logo',
 			array(
 				'height'      => 64,
-				'width'       => 220,
+				'width'       => 240,
 				'flex-height' => true,
 				'flex-width'  => true,
 			)
@@ -43,6 +45,8 @@ if ( ! function_exists( 'unmute_setup' ) ) {
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'responsive-embeds' );
 		add_theme_support( 'wp-block-styles' );
+		add_theme_support( 'editor-styles' );
+		add_editor_style( array( 'assets/css/fonts.css', 'assets/css/editor.css' ) );
 
 		// WooCommerce.
 		add_theme_support( 'woocommerce' );
@@ -52,15 +56,13 @@ if ( ! function_exists( 'unmute_setup' ) ) {
 
 		register_nav_menus(
 			array(
-				'primary'    => esc_html__( 'Primary navigation', 'unmute' ),
-				'footer'     => esc_html__( 'Footer — company', 'unmute' ),
+				'primary'     => esc_html__( 'Primary navigation', 'unmute' ),
+				'footer'      => esc_html__( 'Footer — company', 'unmute' ),
 				'footer-help' => esc_html__( 'Footer — help & policies', 'unmute' ),
 			)
 		);
 
-		add_editor_style( 'assets/css/editor.css' );
-
-		$GLOBALS['content_width'] = 1200;
+		$GLOBALS['content_width'] = 1240;
 	}
 }
 add_action( 'after_setup_theme', 'unmute_setup' );
@@ -68,16 +70,14 @@ add_action( 'after_setup_theme', 'unmute_setup' );
 if ( ! function_exists( 'unmute_assets' ) ) {
 	/**
 	 * Enqueue styles & scripts.
+	 *
+	 * Fonts are self-hosted (assets/fonts + assets/css/fonts.css): no
+	 * render-blocking third-party request and no GDPR exposure.
 	 */
 	function unmute_assets() {
+		wp_enqueue_style( 'unmute-fonts', get_theme_file_uri( 'assets/css/fonts.css' ), array(), UNMUTE_VERSION );
 		wp_enqueue_style( 'unmute-style', get_stylesheet_uri(), array(), UNMUTE_VERSION );
-
-		wp_enqueue_style( 'unmute-main', get_theme_file_uri( 'assets/css/main.css' ), array( 'unmute-style' ), UNMUTE_VERSION );
-
-		$fonts = unmute_google_fonts_url();
-		if ( $fonts ) {
-			wp_enqueue_style( 'unmute-fonts', $fonts, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
-		}
+		wp_enqueue_style( 'unmute-main', get_theme_file_uri( 'assets/css/main.css' ), array( 'unmute-fonts', 'unmute-style' ), UNMUTE_VERSION );
 
 		if ( is_rtl() ) {
 			wp_enqueue_style( 'unmute-rtl', get_theme_file_uri( 'assets/css/rtl.css' ), array( 'unmute-main' ), UNMUTE_VERSION );
@@ -92,6 +92,11 @@ if ( ! function_exists( 'unmute_assets' ) ) {
 			array(
 				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
 				'nonce'   => wp_create_nonce( 'unmute_newsletter' ),
+				'isRtl'   => is_rtl() ? '1' : '0',
+				'i18n'    => array(
+					'error'   => __( 'Something went wrong. Please try again.', 'unmute' ),
+					'sending' => __( 'Sending…', 'unmute' ),
+				),
 			)
 		);
 
@@ -102,53 +107,21 @@ if ( ! function_exists( 'unmute_assets' ) ) {
 }
 add_action( 'wp_enqueue_scripts', 'unmute_assets' );
 
-if ( ! function_exists( 'unmute_resource_hints' ) ) {
+if ( ! function_exists( 'unmute_fonts_url' ) ) {
 	/**
-	 * Preconnect for Google Fonts.
-	 *
-	 * @param array  $urls URLs.
-	 * @param string $relation_type Relation.
-	 * @return array
-	 */
-	function unmute_resource_hints( $urls, $relation_type ) {
-		if ( 'preconnect' === $relation_type && unmute_google_fonts_url() ) {
-			$urls[] = array(
-				'href' => 'https://fonts.gstatic.com',
-				'crossorigin',
-			);
-		}
-		return $urls;
-	}
-}
-add_filter( 'wp_resource_hints', 'unmute_resource_hints', 10, 2 );
-
-if ( ! function_exists( 'unmute_google_fonts_url' ) ) {
-	/**
-	 * Google Fonts URL (display face selectable in the Customizer).
+	 * Optional third-party font URL. Empty by default: the theme ships
+	 * self-hosted faces (Bricolage Grotesque, Manrope, Cairo, Permanent Marker,
+	 * Cormorant Garamond). Child themes may return a Google Fonts URL here.
 	 *
 	 * @return string
 	 */
-	function unmute_google_fonts_url() {
-		$display = unmute_option( 'font_display' );
-		$map     = array(
-			'marker' => 'Permanent+Marker',
-			'brush'  => 'Caveat+Brush',
-			'salt'   => 'Rock+Salt',
-		);
-		$family  = isset( $map[ $display ] ) ? $map[ $display ] : $map['marker'];
-
-		$families = array(
-			'Manrope:wght@400;500;600;700;800',
-			'Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600',
-			$family,
-		);
-
+	function unmute_fonts_url() {
 		/**
-		 * Filter the Google Fonts URL. Return an empty string to self-host fonts.
+		 * Filter the external font stylesheet URL.
 		 *
-		 * @param string $url
+		 * @param string $url Empty by default.
 		 */
-		return apply_filters( 'unmute_google_fonts_url', 'https://fonts.googleapis.com/css2?family=' . implode( '&family=', $families ) . '&display=swap' );
+		return apply_filters( 'unmute_google_fonts_url', '' );
 	}
 }
 
@@ -161,20 +134,32 @@ if ( ! function_exists( 'unmute_css_vars' ) ) {
 	function unmute_css_vars() {
 		$display = unmute_option( 'font_display' );
 		$disp    = array(
-			'marker' => "'Permanent Marker', cursive",
-			'brush'  => "'Caveat Brush', cursive",
-			'salt'   => "'Rock Salt', cursive",
+			'marker'  => "'Permanent Marker', cursive",
+			'brush'   => "'Caveat Brush', cursive",
+			'salt'    => "'Rock Salt', cursive",
+			'grotesk' => "'Bricolage Grotesque', sans-serif",
 		);
 		$cols    = max( 2, min( 4, (int) unmute_option( 'shop_columns' ) ) );
 
-		$css  = ':root{';
-		$css .= '--unmute-bg:' . unmute_option( 'color_bg' ) . ';';
-		$css .= '--unmute-surface:' . unmute_option( 'color_surface' ) . ';';
-		$css .= '--unmute-surface-2:' . unmute_option( 'color_surface2' ) . ';';
-		$css .= '--unmute-accent:' . unmute_option( 'color_accent' ) . ';';
-		$css .= '--unmute-accent-2:' . unmute_option( 'color_accent2' ) . ';';
-		$css .= '--unmute-text:' . unmute_option( 'color_text' ) . ';';
-		$css .= '--unmute-muted:' . unmute_option( 'color_muted' ) . ';';
+		$map = array(
+			'bg'        => 'color_bg',
+			'bg-2'      => 'color_bg2',
+			'surface'   => 'color_surface',
+			'surface-2' => 'color_surface2',
+			'accent'    => 'color_accent',
+			'accent-2'  => 'color_accent2',
+			'accent-3'  => 'color_accent3',
+			'text'      => 'color_text',
+			'muted'     => 'color_muted',
+		);
+
+		$css = ':root{';
+		foreach ( $map as $var => $option ) {
+			$value = unmute_sanitize_hex( unmute_option( $option ) );
+			if ( $value ) {
+				$css .= '--unmute-' . $var . ':' . $value . ';';
+			}
+		}
 		$css .= '--unmute-font-display:' . ( isset( $disp[ $display ] ) ? $disp[ $display ] : $disp['marker'] ) . ';';
 		$css .= '--unmute-cols:' . $cols . ';';
 		$css .= '}';
@@ -197,10 +182,60 @@ if ( ! function_exists( 'unmute_body_classes' ) ) {
 		if ( is_front_page() ) {
 			$classes[] = 'unmute-front';
 		}
+		$classes[] = 'unmute-aurora';
 		return $classes;
 	}
 }
 add_filter( 'body_class', 'unmute_body_classes' );
+
+if ( ! function_exists( 'unmute_front_products' ) ) {
+	/**
+	 * Products for the front-page "featured" grid, sized so the aurora promo
+	 * card always fills the final cell of the desktop grid.
+	 *
+	 * @return array
+	 */
+	function unmute_front_products() {
+		$source = unmute_option( 'featured_source' );
+		$count  = max( 2, min( 16, (int) unmute_option( 'featured_count' ) ) );
+		$limit  = max( 2, $count );
+
+		$args = array(
+			'limit'  => $limit,
+			'status' => 'publish',
+		);
+
+		switch ( $source ) {
+			case 'latest':
+				$args['orderby'] = 'date';
+				$args['order']   = 'DESC';
+				break;
+			case 'best_selling':
+				$args['orderby'] = 'popularity';
+				break;
+			case 'random':
+				$args['orderby'] = 'rand';
+				break;
+			default:
+				$args['featured'] = true;
+		}
+
+		$products = wc_get_products( $args );
+
+		if ( empty( $products ) && 'featured' === $source ) {
+			$products = wc_get_products(
+				array(
+					'limit'   => $limit,
+					'status'  => 'publish',
+					'orderby' => 'date',
+					'order'   => 'DESC',
+				)
+			);
+		}
+
+		return is_array( $products ) ? $products : array();
+	}
+}
 
 if ( ! function_exists( 'unmute_excerpt_more' ) ) {
 	/**
@@ -222,10 +257,10 @@ if ( ! function_exists( 'unmute_starter_content' ) ) {
 		add_theme_support(
 			'starter-content',
 			array(
-				'posts'    => array(
+				'posts'     => array(
 					'about-unmute' => array(
 						'post_title'   => _x( 'About UNMUTE', 'Starter content', 'unmute' ),
-						'post_content' => __( 'Your feelings deserve a voice. Wear them. UNMUTE is an art-driven darkwear label: original drawings, heavyweight fabric, limited runs.', 'unmute' ),
+						'post_content' => __( 'EXPRESS WITHOUT LIMITS. UNMUTE is an art-driven label: original artwork, heavyweight fabric, limited runs. Your mind has no dress code.', 'unmute' ),
 						'post_type'    => 'page',
 					),
 				),
@@ -234,8 +269,8 @@ if ( ! function_exists( 'unmute_starter_content' ) ) {
 						'name'  => __( 'Primary navigation', 'unmute' ),
 						'items' => array(
 							'page_about' => array(
-								'type'    => 'post_type',
-								'object'  => 'page',
+								'type'      => 'post_type',
+								'object'    => 'page',
 								'object_id' => '{{about-unmute}}',
 							),
 						),

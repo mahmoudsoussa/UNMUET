@@ -1,36 +1,65 @@
 /* ==========================================================================
-   UNMUTE — block editor canvas (approximates the front-end dark surface)
+   UNMUTE — block editor canvas (mirrors the front-end aurora surfaces)
    ========================================================================== */
 
+:root {
+	--unmute-bg: #0f1226;
+	--unmute-surface: #1a1f3d;
+	--unmute-accent: #7956b9;
+	--unmute-accent-2: #37bdb0;
+	--unmute-text: #e8e8f0;
+	--unmute-muted: #9ba2c7;
+}
+
 body {
-	background: #141218;
-	color: #f2eef8;
-	font-family: 'Manrope', system-ui, sans-serif;
+	background: var(--unmute-bg, #0f1226);
+	color: var(--unmute-text, #e8e8f0);
+	font-family: 'Manrope', 'Cairo', system-ui, sans-serif;
+}
+
+.editor-styles-wrapper {
+	background: #0f1226;
+	color: #e8e8f0;
 }
 
 .editor-styles-wrapper,
 .editor-styles-wrapper p {
-	color: #f2eef8;
+	color: #e8e8f0;
+	font-family: 'Manrope', 'Cairo', system-ui, sans-serif;
 }
 
 .editor-styles-wrapper a {
-	color: #b7a4f0;
+	color: #37bdb0;
 }
 
 .editor-styles-wrapper h1,
 .editor-styles-wrapper h2,
-.editor-styles-wrapper h3 {
-	color: #f2eef8;
-	font-family: 'Cormorant Garamond', Georgia, serif;
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4 {
+	color: #e8e8f0;
+	font-family: 'Bricolage Grotesque', 'Cairo', sans-serif;
+	font-weight: 700;
+	letter-spacing: -0.02em;
 }
 
 .editor-styles-wrapper blockquote {
-	border-inline-start: 3px solid #b7a4f0;
+	border-inline-start: 2px solid #7956b9;
+	padding-inline-start: 20px;
+	font-family: 'Cormorant Garamond', 'Cairo', Georgia, serif;
 	font-style: italic;
+	color: #e8e8f0;
 }
 
 .editor-styles-wrapper .wp-block-button__link {
-	background: #b7a4f0;
-	color: #150f22;
+	background: linear-gradient(102deg, #7956b9, #c47bcb 52%, #37bdb0);
+	color: #0d1022;
 	border-radius: 999px;
+	font-weight: 800;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	font-size: 0.86rem;
+}
+
+.editor-styles-wrapper .wp-block-separator {
+	border-color: rgba(232, 232, 240, 0.16);
 }

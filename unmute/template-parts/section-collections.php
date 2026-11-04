@@ -30,6 +30,7 @@ if ( is_wp_error( $cats ) || ! $cats ) {
 }
 ?>
 <section class="section collections" id="collections">
+	<?php unmute_aurora( 'unmute-aurora--calm' ); ?>
 	<div class="unmute-container">
 		<?php unmute_section_head( unmute_option( 'collections_title' ) ); ?>
 		<div class="collections__grid">
@@ -43,16 +44,16 @@ if ( is_wp_error( $cats ) || ! $cats ) {
 				?>
 				<a class="col-card col-card--v<?php echo esc_attr( (string) $variant ); ?>" href="<?php echo esc_url( get_term_link( $cat ) ); ?>" <?php echo $thumb_url ? 'style="background-image:url(' . esc_url( $thumb_url ) . ')"' : ''; ?>>
 					<span class="col-card__veil" aria-hidden="true"></span>
+					<?php echo unmute_icon( 'arrow', 'col-card__arrow unmute-icon--flip-rtl' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotSanitized ?>
 					<span class="col-card__inner">
 						<span class="col-card__name"><?php echo esc_html( $cat->name ); ?></span>
 						<span class="col-card__count">
 							<?php
 							/* translators: %d: number of products. */
-							echo esc_html( sprintf( _n( '%d piece', '%d pieces', (int) $cat->count, 'unmute' ), (int) $cat->count ) );
+							echo esc_html( sprintf( _n( '%d قطعة', '%d قطع', (int) $cat->count, 'unmute' ), (int) $cat->count ) );
 							?>
 						</span>
 					</span>
-					<?php echo unmute_icon( 'arrow', 'col-card__arrow unmute-icon--flip-rtl' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotSanitized ?>
 				</a>
 			<?php endforeach; ?>
 		</div>

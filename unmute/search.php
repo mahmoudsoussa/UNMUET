@@ -18,13 +18,13 @@ get_header();
 		<h1 class="page-head__title">
 			<?php
 			/* translators: %s: search query. */
-			echo esc_html( sprintf( __( 'Search: %s', 'unmute' ), get_search_query() ) );
+			echo esc_html( sprintf( __( 'نتائج البحث: %s', 'unmute' ), get_search_query() ) );
 			?>
 		</h1>
 		<p class="page-head__sub">
 			<?php
 			/* translators: %d: number of results. */
-			echo esc_html( sprintf( _n( '%d result', '%d results', (int) $wp_query->found_posts, 'unmute' ), (int) $wp_query->found_posts ) );
+			echo esc_html( sprintf( _n( '%d نتيجة', '%d نتيجة', (int) $wp_query->found_posts, 'unmute' ), (int) $wp_query->found_posts ) );
 			?>
 		</p>
 	</header>
@@ -48,8 +48,8 @@ get_header();
 		the_posts_pagination(
 			array(
 				'mid_size'  => 1,
-				'prev_text' => esc_html__( 'Previous', 'unmute' ),
-				'next_text' => esc_html__( 'Next', 'unmute' ),
+				'prev_text' => esc_html__( 'السابق', 'unmute' ),
+				'next_text' => esc_html__( 'التالي', 'unmute' ),
 			)
 		);
 		?>

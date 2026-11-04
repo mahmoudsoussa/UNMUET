@@ -39,7 +39,7 @@ if ( unmute_option( 'news_show' ) ) {
 // so Gutenberg content can extend the landing page.
 if ( 'page' === get_option( 'show_on_front' ) && (int) get_option( 'page_on_front' ) > 0 ) {
 	$front = get_post( (int) get_option( 'page_on_front' ) );
-	if ( $front && trim( (string) $front->post_content ) !== '' ) {
+	if ( $front && '' !== trim( (string) $front->post_content ) ) {
 		echo '<section class="unmute-blocks"><div class="unmute-container">';
 		echo apply_filters( 'the_content', $front->post_content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotSanitized
 		echo '</div></section>';
